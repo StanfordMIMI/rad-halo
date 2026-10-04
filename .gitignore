@@ -1,0 +1,29 @@
+# Restricted data and local artifacts
+data/
+outputs/
+multirun/
+checkpoints/
+wandb/
+*.safetensors
+*.bin
+
+# Private paper repository
+paper/
+
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+build/
+dist/
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/

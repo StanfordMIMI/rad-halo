@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "radhalo"
+version = "1.0.0"
+description = "Code for Rad-Halo: hallucination and omission detection in LLM-generated radiology impressions"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = [
+    "numpy==1.26.4",
+    "pandas==2.3.3",
+    "scipy==1.17.1",
+    "scikit-learn==1.8.0",
+    "krippendorff==0.8.2",
+    "matplotlib==3.10.7",
+    "pyyaml>=6.0",
+    "hydra-core==1.3.2",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+# Sentence segmentation (scispaCy model: see README).
+nlp = ["spacy==3.7.5", "scispacy==0.6.2"]
+# API models: Gemini via Vertex AI, Claude via Anthropic.
+api = ["google-genai==1.61.0", "google-cloud-aiplatform==1.135.0", "anthropic==0.77.0"]
+# Local open-weights models and RadCheck.
+local = [
+    "torch==2.9.1",
+    "transformers==4.57.5",
+    "peft==0.18.1",
+    "accelerate==1.12.0",
+    "bitsandbytes==0.49.1",
+]
+vllm = ["vllm==0.15.0"]
+train = ["datasets==4.4.2", "wandb==0.23.1"]
+medval = ["dspy==2.6.14"]
+annotation = ["openpyxl>=3.1"]
+dev = ["pytest>=8", "hypothesis>=6", "ruff>=0.6", "pre-commit>=3"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+radhalo = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
