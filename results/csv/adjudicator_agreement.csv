@@ -1,0 +1,5 @@
+annotator,hall_disputed,hall_agreement_rate,omis_disputed,omis_agreement_rate,overall_agreement_rate
+annotator_1,89,57.3034,78,55.1282,56.2874
+annotator_2,74,67.5676,98,54.0816,59.8837
+annotator_3,86,43.0233,99,38.3838,40.5405
+annotator_4,65,35.3846,83,65.0602,52.027

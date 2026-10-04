@@ -1,0 +1,10 @@
+metric,value
+num_reports,300
+impression_sentences,1172
+findings_sentences,3704
+hallucinations,323
+omissions,87
+hallucination_rate,27.56
+omission_rate,2.35
+pct_reports_with_hallucination,46.33
+pct_reports_with_omission,19.67

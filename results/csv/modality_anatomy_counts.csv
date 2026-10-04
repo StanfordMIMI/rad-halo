@@ -1,0 +1,50 @@
+modality_anatomy,num_reports
+X-ray Chest,63
+CT Chest,29
+CT Abdomen/Pelvis,28
+CT Head,24
+MRI Head,15
+Ultrasound Lower extremity,14
+Ultrasound Abdomen,12
+X-ray Ankle/Foot,8
+CT Cervical spine,8
+X-ray Abdomen,7
+CT Chest/Abdomen/Pelvis,7
+X-ray Hip,7
+Ultrasound Neck,6
+MRI Lumbar spine,5
+MRI Abdomen,5
+X-ray Knee,5
+CT Face,5
+CT Head and neck,4
+Ultrasound Upper extremity,4
+CT Lower extremity,3
+X-ray Wrist/Hand,3
+Mammography Breast,3
+Ultrasound Pelvis,2
+X-ray Elbow,2
+CT Lumbar spine,2
+MRI Abdomen/Pelvis,2
+MRI Head and neck,2
+Ultrasound Abdomen/Pelvis,2
+X-ray Cervical spine,2
+CT Ankle/Foot,2
+MRI Breast,1
+Fluoroscopy Abdomen,1
+X-ray Upper extremity,1
+X-ray Pelvis,1
+CT Abdomen,1
+CT Thoracic spine,1
+Fluoroscopy Hip,1
+Fluoroscopy Chest,1
+MRI Fetal,1
+Ultrasound Fetal,1
+Fluoroscopy Lower extremity,1
+CT Pelvis,1
+X-ray Shoulder,1
+MRI Cervical spine,1
+MRI Spine,1
+CT Shoulder,1
+Fluoroscopy Neck,1
+MRI Shoulder,1
+X-ray Chest/Pelvis,1

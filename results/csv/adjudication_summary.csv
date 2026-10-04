@@ -1,0 +1,10 @@
+metric,value
+hall_disputed_sentences,151
+hall_adjudicated_as_error,102
+hall_adjudicated_as_not_error,49
+omis_disputed_sentences,163
+omis_adjudicated_as_error,48
+omis_adjudicated_as_not_error,115
+total_disputed_sentences,314
+total_adjudicated_as_error,150
+total_adjudicated_as_not_error,164

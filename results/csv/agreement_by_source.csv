@@ -1,0 +1,7 @@
+impression_source,num_reports,hall_alpha,hall_f1,omis_alpha,omis_f1
+Qwen/Qwen3-1.7B,50,0.5798,0.6239,0.4112,0.4333
+claude-sonnet-4-5-20250929,50,0.1562,0.2069,0.2658,0.2581
+gemini-2.5-flash,50,0.2013,0.2222,0.2049,0.2128
+meta-llama/Llama-3.1-8B-Instruct,50,0.8277,0.9286,0.3681,0.3582
+mistralai/Ministral-3-3B-Instruct-2512,50,0.5928,0.7846,0.3855,0.4407
+original_radiologist,50,0.1013,0.2174,0.3171,0.3243

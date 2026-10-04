@@ -1,0 +1,3 @@
+error_type,alpha,pairwise_f1,label_pairs
+hallucination,0.6738,0.772,1342
+omission,0.3363,0.3522,4154

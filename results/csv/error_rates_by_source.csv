@@ -1,0 +1,7 @@
+impression_source,num_reports,impression_sentences,findings_sentences,hallucinations,omissions,hallucination_rate,omission_rate,pct_reports_with_hallucination,pct_reports_with_omission
+Qwen/Qwen3-1.7B,50,314,592,53,23,16.88,3.89,52.0,34.0
+claude-sonnet-4-5-20250929,50,134,591,18,7,13.43,1.18,28.0,12.0
+gemini-2.5-flash,50,149,738,4,17,2.68,2.3,8.0,18.0
+meta-llama/Llama-3.1-8B-Instruct,50,287,515,158,20,55.05,3.88,72.0,32.0
+mistralai/Ministral-3-3B-Instruct-2512,50,125,534,58,9,46.4,1.69,72.0,8.0
+original_radiologist,50,163,734,32,11,19.63,1.5,46.0,14.0

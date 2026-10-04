@@ -1,0 +1,5 @@
+risk_level,num_reports,impression_sentences,findings_sentences,hallucinations,omissions,hallucination_rate,omission_rate,pct_reports_with_hallucination,pct_reports_with_omission
+1,30,60,153,1,1,1.67,0.65,3.33,3.33
+2,30,100,305,8,0,8.0,0.0,23.33,0.0
+3,30,112,344,10,4,8.93,1.16,23.33,10.0
+4,210,900,2902,304,82,33.78,2.83,59.05,26.19

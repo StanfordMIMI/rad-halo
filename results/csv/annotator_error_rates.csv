@@ -1,0 +1,5 @@
+annotator,impression_sentences,hallucinations,hallucination_rate,findings_sentences,omissions,omission_rate
+annotator_1,652,159,24.39,2110,61,2.89
+annotator_2,693,185,26.7,2147,77,3.59
+annotator_3,509,152,29.86,1484,92,6.2
+annotator_4,575,126,21.91,1892,24,1.27
