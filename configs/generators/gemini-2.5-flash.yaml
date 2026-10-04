@@ -1,0 +1,8 @@
+# Paper: Table tab:appendix_generation_models, row "Gemini 2.5 Flash".
+# No `thinking` key: the model's default (dynamic) thinking applies.
+type: vertex_ai
+path: gemini-2.5-flash
+batch_size: 1
+max_new_tokens: 1024
+temperature: 0.7
+top_p: 0.8

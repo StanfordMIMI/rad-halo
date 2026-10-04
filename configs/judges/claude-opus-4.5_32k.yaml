@@ -1,0 +1,9 @@
+# Paper: Table tab:appendix_detector_configs, row "Claude Opus 4.5 32k".
+# No top_p: the claude_api backend never sends it.
+# With thinking, a second call to the same model (no thinking) extracts the JSON output.
+type: claude_api
+path: claude-opus-4-5-20251101
+max_new_tokens: 40000
+thinking:
+  budget_tokens: 32000
+effort: high

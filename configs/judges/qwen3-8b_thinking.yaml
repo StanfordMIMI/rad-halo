@@ -1,0 +1,12 @@
+# Paper: Table tab:appendix_detector_configs, row "Qwen 3 8B thinking".
+type: local
+path: Qwen/Qwen3-8B
+batch_size: 4
+max_length: 8192
+max_new_tokens: 32768
+temperature: 0.6
+top_p: 0.95
+top_k: 20
+min_p: 0
+thinking:
+  enable: true

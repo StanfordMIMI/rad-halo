@@ -1,0 +1,10 @@
+# Paper: Table tab:appendix_detector_configs, row "Qwen 3 8B".
+type: local
+path: Qwen/Qwen3-8B
+batch_size: 4
+max_length: 8192
+max_new_tokens: 32768
+temperature: 0.7
+top_p: 0.8
+top_k: 20
+min_p: 0

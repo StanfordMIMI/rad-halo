@@ -1,0 +1,8 @@
+# Paper: Table tab:appendix_generation_models, row "Qwen 3 1.7B".
+type: local
+path: Qwen/Qwen3-1.7B
+batch_size: 20
+max_length: 8192
+max_new_tokens: 1024
+temperature: 0.7
+top_p: 0.95

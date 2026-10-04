@@ -1,0 +1,139 @@
+import subprocess
+import sys
+
+import pytest
+
+from radhalo.llm import build_model
+from radhalo.llm.claude import EFFORT_BETA, EXTRACTION_SYSTEM, claude_request, extraction_request
+from radhalo.llm.local import hf_generation_kwargs, strip_think, thinking_enabled, vllm_sampling_kwargs
+from radhalo.llm.vertex import to_vertex_schema, vertex_config, vertex_request
+
+SCHEMA = {
+    "type": "object",
+    "properties": {
+        "labels": {"type": "array", "items": {"type": "string"}, "description": "Flagged sentences"},
+        "kind": {"type": "string", "enum": ["a", "b"]},
+    },
+    "required": ["labels"],
+    "additionalProperties": False,
+}
+CONVERSATION = [
+    {"role": "system", "content": "You are a fictional assistant."},
+    {"role": "user", "content": "Fictional question."},
+]
+
+
+def test_vertex_schema_upper_cases_types_and_drops_other_keywords():
+    assert to_vertex_schema(SCHEMA) == {
+        "type": "OBJECT",
+        "properties": {
+            "labels": {"type": "ARRAY", "description": "Flagged sentences", "items": {"type": "STRING"}},
+            "kind": {"type": "STRING", "enum": ["a", "b"]},
+        },
+        "required": ["labels"],
+    }
+    assert to_vertex_schema(None) is None
+
+
+@pytest.mark.parametrize(
+    "thinking,expected",
+    [({"budget": 0}, {"thinking_budget": 0}), ({"level": "LOW"}, {"thinking_level": "LOW"})],
+)
+def test_vertex_thinking_forces_temperature_one(thinking, expected):
+    cfg = {"temperature": 0.7, "top_p": 0.9, "max_new_tokens": 64, "thinking": thinking}
+    assert vertex_config(cfg) == {
+        "temperature": 1.0,
+        "top_p": 0.9,
+        "max_output_tokens": 64,
+        "thinking_config": expected,
+    }
+
+
+def test_vertex_config_without_thinking_keeps_temperature_and_adds_schema():
+    config = vertex_config({"temperature": 0.7}, SCHEMA)
+    assert config["temperature"] == 0.7
+    assert config["response_mime_type"] == "application/json"
+    assert config["response_schema"] == to_vertex_schema(SCHEMA)
+    assert vertex_config({}) == {}
+
+
+def test_vertex_request_splits_system_and_user():
+    request = vertex_request("m", CONVERSATION, {"top_p": 0.5})
+    assert request == {
+        "model": "m",
+        "contents": "Fictional question.",
+        "config": {"system_instruction": "You are a fictional assistant.", "top_p": 0.5},
+    }
+
+
+def test_claude_request_never_sends_top_p_and_forces_tool():
+    cfg = {"path": "m", "max_new_tokens": 8, "temperature": 0.0, "top_p": 0.95}
+    request = claude_request(cfg, CONVERSATION, SCHEMA)
+    assert "top_p" not in request and request["temperature"] == 0.0
+    assert request["system"] == "You are a fictional assistant."
+    assert request["messages"] == [CONVERSATION[1]]
+    assert request["tools"][0]["input_schema"] is SCHEMA
+    assert request["tool_choice"] == {"type": "tool", "name": "structured_output"}
+    assert "betas" not in request
+
+
+def test_claude_thinking_request_drops_temperature_and_tools():
+    cfg = {
+        "path": "m",
+        "max_new_tokens": 8,
+        "temperature": 0.3,
+        "thinking": {"budget_tokens": 4},
+        "effort": "high",
+    }
+    request = claude_request(cfg, CONVERSATION, SCHEMA)
+    assert request["thinking"] == {"type": "enabled", "budget_tokens": 4}
+    assert "temperature" not in request and "tools" not in request
+    assert request["betas"] == [EFFORT_BETA] and request["output_config"] == {"effort": "high"}
+
+
+def test_claude_extraction_request():
+    request = extraction_request({"path": "m", "max_new_tokens": 8}, "fictional analysis", SCHEMA)
+    assert request["system"] == EXTRACTION_SYSTEM
+    assert request["messages"] == [{"role": "user", "content": "fictional analysis"}]
+    assert "thinking" not in request and "betas" not in request and "temperature" not in request
+    assert request["tool_choice"]["name"] == "structured_output"
+
+
+def test_strip_think_removes_multiline_blocks():
+    text = '<think>\nstep one\nstep two\n</think>\n\n{"a": 1} <think>x</think>'
+    assert strip_think(text).strip() == '{"a": 1}'
+
+
+def test_hf_and_vllm_sampling_arguments():
+    cfg = {"temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0, "max_new_tokens": 16}
+    assert hf_generation_kwargs(cfg) == {
+        "do_sample": True,
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "num_return_sequences": 1,
+        "top_k": 20,
+        "min_p": 0,
+    }
+    assert "top_k" not in hf_generation_kwargs({"temperature": 0.7, "top_p": 0.9})
+    assert vllm_sampling_kwargs(cfg) == {"temperature": 0.6, "top_p": 0.95, "max_tokens": 16}
+    assert thinking_enabled({"thinking": {"enable": True}}) and not thinking_enabled({})
+
+
+@pytest.mark.parametrize("backend", ["local", "vllm"])
+def test_local_backends_reject_json_schema(backend):
+    with pytest.raises(NotImplementedError):
+        build_model({"type": backend, "path": "m", "batch_size": 1, "max_length": 8}, json_schema=SCHEMA)
+
+
+def test_unknown_backend():
+    with pytest.raises(ValueError):
+        build_model({"type": "other"})
+
+
+def test_backends_import_without_heavy_dependencies():
+    code = (
+        "import sys, radhalo.llm.vertex, radhalo.llm.claude, radhalo.llm.local; "
+        "heavy = {'torch', 'transformers', 'vllm', 'anthropic', 'google.genai'} & set(sys.modules); "
+        "assert not heavy, heavy"
+    )
+    subprocess.run([sys.executable, "-c", code], check=True)
