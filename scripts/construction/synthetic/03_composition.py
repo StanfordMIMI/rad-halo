@@ -1,6 +1,6 @@
 """Count synthetic training samples by error type and label (App. D.3).
 
-Writes derived/synthetic_composition.csv from the output of `04_create_synthetic_data.py`.
+Writes derived/synthetic_composition.csv from the output of `02_create_synthetic_data.py`.
 """
 
 import argparse
@@ -9,7 +9,7 @@ import json
 from collections import Counter
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parents[2]
+REPO = Path(__file__).resolve().parents[3]
 
 
 def composition(samples: list[dict]) -> dict[str, int]:

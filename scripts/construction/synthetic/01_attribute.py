@@ -1,7 +1,7 @@
 """Link impression sentences to supporting findings sentences with Gemini 2.5 Flash Lite (App. D.1).
 
-Input: the report pool of `02_preprocess.py`. Calls Vertex AI once per report (GCP_PROJECT_ID; region
-us-central1) and writes the reports with sentence types and attributed findings.
+Input: the report pool of `preprocessing/02_preprocess.py`. Calls Vertex AI once per report
+(GCP_PROJECT_ID; region us-central1) and writes the reports with sentence types and attributed findings.
 
 Worked example 3 of the prompt is rendered from MIMIC-IV-Note (`derived/few_shot_note_ids.csv`);
 examples 1 and 2 are not reports in MIMIC-IV-Note and are read from `--examples`, a YAML file
@@ -26,13 +26,15 @@ from radhalo.synthetic.attribution import (
     vertexai_model,
 )
 
-REPO = Path(__file__).resolve().parents[2]
+REPO = Path(__file__).resolve().parents[3]
 
 
 def main() -> None:
     load_dotenv()
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", type=Path, required=True, help="report pool (JSONL from 02_preprocess.py)")
+    parser.add_argument(
+        "--input", type=Path, required=True, help="report pool (preprocessing/02_preprocess.py output)"
+    )
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--examples", type=Path, required=True, help="worked examples not in MIMIC-IV-Note")
     parser.add_argument(

@@ -1,4 +1,4 @@
-# RadCheck 8B fine-tuning (scripts/construction/05_train_radcheck.py, App. C.4). Run from the repository root.
+# RadCheck 8B fine-tuning (scripts/construction/training/train_radcheck.py, App. C.4). Run from the repository root.
 # The run directory (checkpoints/, final_model/) is outputs/train_radcheck/<timestamp>.
 model:
   name: qwen-3-embedding-8b
@@ -8,7 +8,7 @@ model:
   num_labels: 2
 
 dataset:
-  input_file: data/synthetic/radcheck_synthetic.jsonl  # output of 04_create_synthetic_data.py
+  input_file: data/synthetic/radcheck_synthetic.jsonl  # output of synthetic/02_create_synthetic_data.py
   text_column: features
   label_column: label
   validation_split: 0.05

@@ -13,13 +13,13 @@ from tqdm import tqdm
 from radhalo.data.report import read_reports
 from radhalo.synthetic.samples import report_samples
 
-REPO = Path(__file__).resolve().parents[2]
+REPO = Path(__file__).resolve().parents[3]
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--input", type=Path, required=True, help="attributed reports (JSONL from 03_attribute.py)"
+        "--input", type=Path, required=True, help="attributed reports (JSONL from 01_attribute.py)"
     )
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--template", type=Path, default=REPO / "prompts" / "radcheck.txt")
