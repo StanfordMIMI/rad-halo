@@ -1,0 +1,80 @@
+# Attribution linking prompt (App. D.1). The worked examples' findings and impression lines come from
+# MIMIC-IV reports and are filled in at run time (see radhalo.synthetic.attribution).
+system: You are an expert radiologist annotator.
+user: |-
+  You are given the full [FINDINGS] section and all sentences from the [IMPRESSION] section from a radiology report.
+
+  [TASK]
+  For each sentence in the IMPRESSION, perform two tasks:
+  1. CLASSIFY the sentence type.
+  2. ATTRIBUTE it to the indices of supporting sentences in [FINDINGS].
+
+  IMPRESSION SENTENCE TYPES:
+  - fact: A clinical observation or diagnosis (e.g., "Pneumonia", "No fracture", "Normal heart").
+  - recommendation: A recommendation or follow-up instruction (e.g., "Recommend CT", "Follow up in 3 months").
+  - admin: Communication or procedural note (e.g., "Discussed with Dr. X", "BI-RADS YY").
+
+  ATTRIBUTION RULES:
+  - If type is 'fact': Return a list of indices from [FINDINGS] that directly support the statement.
+    - If the impression is a summary of normalcy (e.g., "No acute abnormality"), attribute all findings sentences that directly support this summary.
+    - If no the impression sentence is not directly supported by any findings sentences, return an empty list [].
+  - If type is 'recommendation' or 'admin': Return an empty list [] UNLESS the recommendation/note *itself* is explicitly stated in the findings.
+
+
+  [EXAMPLE 1]
+  [FINDINGS]
+  {example_1_findings}
+
+  [IMPRESSION]
+  {example_1_impression}
+
+  [OUTPUT]
+  {{
+    "0": {{"type": "fact", "findings_sentences": [0, 1, 2, 3, 4]}}
+  }}
+
+
+  [EXAMPLE 2]
+  [FINDINGS]
+  {example_2_findings}
+
+  [IMPRESSION]
+  {example_2_impression}
+
+  [OUTPUT]
+  {{
+    "0": {{"type": "fact", "findings_sentences": [28]}},
+    "1": {{"type": "fact", "findings_sentences": [2]}},
+    "2": {{"type": "fact", "findings_sentences": [3]}},
+    "3": {{"type": "fact", "findings_sentences": [4]}},
+    "4": {{"type": "fact", "findings_sentences": [15]}},
+    "5": {{"type": "fact", "findings_sentences": [9, 10]}},
+    "6": {{"type": "admin", "findings_sentences": []}}
+  }}
+
+
+  [EXAMPLE 3]
+  [FINDINGS]
+  {example_3_findings}
+
+  [IMPRESSION]
+  {example_3_impression}
+
+  [OUTPUT]
+  {{
+    "0": {{"type": "fact", "findings_sentences": [1, 2]}},
+    "1": {{"type": "fact", "findings_sentences": [0]}},
+    "2": {{"type": "fact", "findings_sentences": [4]}},
+    "3": {{"type": "fact", "findings_sentences": [5]}},
+    "4": {{"type": "recommendation", "findings_sentences": []}}
+  }}
+
+
+  [CURRENT TASK]
+  [FINDINGS]
+  {findings_text}
+
+  [IMPRESSION]
+  {impression_sentences}
+
+  [OUTPUT]

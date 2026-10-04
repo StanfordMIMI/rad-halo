@@ -1,0 +1,61 @@
+# RadCheck 8B fine-tuning (scripts/construction/05_train_radcheck.py, App. C.4). Run from the repository root.
+# The run directory (checkpoints/, final_model/) is outputs/train_radcheck/<timestamp>.
+model:
+  name: qwen-3-embedding-8b
+  path: Qwen/Qwen3-Embedding-8B
+  per_device_train_batch_size: 32
+  per_device_eval_batch_size: 64
+  num_labels: 2
+
+dataset:
+  input_file: data/synthetic/radcheck_synthetic.jsonl  # output of 04_create_synthetic_data.py
+  text_column: features
+  label_column: label
+  validation_split: 0.05
+  max_length: 1536  # padding to this length, left side
+
+training:
+  num_epochs: 2
+  learning_rate: 2e-4
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  gradient_accumulation_steps: 1
+  eval_strategy: steps
+  eval_steps: 25
+  save_strategy: steps
+  save_steps: 25
+  save_total_limit: 3
+  load_best_model_at_end: true
+  metric_for_best_model: eval_f1
+  greater_is_better: true
+  logging_steps: 10
+  bf16: true
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+
+quantization:
+  load_in_4bit: true
+  bnb_4bit_compute_dtype: bfloat16
+  bnb_4bit_quant_type: nf4
+
+output:
+  model_dir: checkpoints
+  final_model_dir: final_model
+
+wandb:  # the paper run logged to Weights & Biases; off by default
+  enabled: false
+  project: radiology-hallucination-detection
+  run_name: null
+  tags: [fine-tuning, binary-classification]
+
+seed: 42
+
+hydra:
+  job:
+    chdir: true
+  run:
+    dir: outputs/train_radcheck/${now:%Y-%m-%d_%H-%M-%S}
