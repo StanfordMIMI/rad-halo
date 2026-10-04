@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this code or Rad-Halo, please cite the paper."
+title: "Rad-Halo"
+type: software
+license: MIT
+authors:
+  - family-names: Gaus
+    given-names: Richard
+preferred-citation:
+  type: article
+  title: "Rad-Halo: An Expert-Annotated Benchmark for Detecting Hallucinations and Omissions in LLM-Generated Radiology Impressions"
+  year: 2026
+  authors:
+    - family-names: Gaus
+      given-names: Richard
+    - family-names: Aali
+      given-names: Asad
+    - family-names: Polacin
+      given-names: Malgorzata
+    - family-names: Paschali
+      given-names: Magdalini
+    - family-names: Hein
+      given-names: Dennis
+    - family-names: Lopez
+      given-names: Ivan
+    - family-names: Chang
+      given-names: Ken
+    - family-names: Kim
+      given-names: Julie
+    - family-names: Ma
+      given-names: Liliana
+    - family-names: Qian
+      given-names: Calvin
+    - family-names: Langlotz
+      given-names: Curtis
+    - family-names: Daneshjou
+      given-names: Roxana
+    - family-names: Bluethgen
+      given-names: Christian
+    - family-names: Chaudhari
+      given-names: Akshay
