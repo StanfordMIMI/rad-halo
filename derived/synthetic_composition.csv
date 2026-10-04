@@ -1,0 +1,7 @@
+metric,value
+total_samples,35151
+unique_reports,9938
+hallucination_positive,8659
+hallucination_negative,8533
+omission_positive,8345
+omission_negative,9614

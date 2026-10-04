@@ -1,0 +1,5 @@
+error_type,cluster,count,percentage
+hallucination,reference to external information,15,37.5
+hallucination,clinical judgment,13,32.5
+hallucination,unsupported information,8,20.0
+hallucination,ambiguity,4,10.0

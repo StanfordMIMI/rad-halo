@@ -1,0 +1,300 @@
+{"radhalo_id": 0, "findings_scores": [0.0, 0.0, 1.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 1, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 2, "findings_scores": [0.0], "impression_scores": [0.0]}
+{"radhalo_id": 3, "findings_scores": [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 1.0]}
+{"radhalo_id": 4, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 5, "findings_scores": [0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 6, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0]}
+{"radhalo_id": 7, "findings_scores": [0.0], "impression_scores": [1.0]}
+{"radhalo_id": 8, "findings_scores": [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 9, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 1.0]}
+{"radhalo_id": 10, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 11, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 12, "findings_scores": [1.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0]}
+{"radhalo_id": 13, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0]}
+{"radhalo_id": 14, "findings_scores": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0]}
+{"radhalo_id": 15, "findings_scores": [0.0, 0.0, 1.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 16, "findings_scores": [0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 17, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 18, "findings_scores": [0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 19, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 20, "findings_scores": [0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 21, "findings_scores": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 1.0]}
+{"radhalo_id": 22, "findings_scores": [0.0, 1.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 23, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 24, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 25, "findings_scores": [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 26, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 1.0]}
+{"radhalo_id": 27, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 28, "findings_scores": [1.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 29, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 30, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0]}
+{"radhalo_id": 31, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 32, "findings_scores": [0.0, 0.0, 1.0], "impression_scores": [0.0]}
+{"radhalo_id": 33, "findings_scores": [0.0, 1.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 1.0]}
+{"radhalo_id": 34, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 35, "findings_scores": [0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0]}
+{"radhalo_id": 36, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 37, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 38, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 39, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [0.0, 1.0, 1.0]}
+{"radhalo_id": 40, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 41, "findings_scores": [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 42, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0, 0.0]}
+{"radhalo_id": 43, "findings_scores": [0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 44, "findings_scores": [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 45, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 46, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 47, "findings_scores": [0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 48, "findings_scores": [1.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [0.0]}
+{"radhalo_id": 49, "findings_scores": [0.0, 1.0, 1.0, 1.0], "impression_scores": [0.0]}
+{"radhalo_id": 50, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 51, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 52, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 53, "findings_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 54, "findings_scores": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 55, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 56, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 57, "findings_scores": [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0]}
+{"radhalo_id": 58, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 1.0]}
+{"radhalo_id": 59, "findings_scores": [1.0, 0.0, 0.0, 0.0, 1.0, 1.0], "impression_scores": [0.0]}
+{"radhalo_id": 60, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 61, "findings_scores": [0.0, 1.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 62, "findings_scores": [0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 63, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 64, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 65, "findings_scores": [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 66, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 67, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 68, "findings_scores": [0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 1.0]}
+{"radhalo_id": 69, "findings_scores": [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 70, "findings_scores": [0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0], "impression_scores": [0.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 71, "findings_scores": [0.0, 1.0, 0.0, 1.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 72, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 73, "findings_scores": [1.0, 1.0, 1.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 74, "findings_scores": [0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 75, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 76, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 77, "findings_scores": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 0.0]}
+{"radhalo_id": 78, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 79, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 80, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 81, "findings_scores": [1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0]}
+{"radhalo_id": 82, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 1.0]}
+{"radhalo_id": 83, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 84, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 85, "findings_scores": [0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0], "impression_scores": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 86, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 87, "findings_scores": [0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0, 0.0, 0.0, 1.0, 1.0]}
+{"radhalo_id": 88, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 89, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 1.0, 0.0, 1.0]}
+{"radhalo_id": 90, "findings_scores": [0.0, 0.0, 1.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 91, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 92, "findings_scores": [0.0, 0.0, 1.0, 1.0, 0.0, 1.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 93, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 94, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 95, "findings_scores": [1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 96, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 97, "findings_scores": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 98, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 99, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 100, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 101, "findings_scores": [0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 1.0]}
+{"radhalo_id": 102, "findings_scores": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 1.0]}
+{"radhalo_id": 103, "findings_scores": [0.0, 1.0, 1.0, 0.0, 1.0], "impression_scores": [1.0, 1.0, 0.0, 0.0, 1.0, 0.0]}
+{"radhalo_id": 104, "findings_scores": [1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 105, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 1.0]}
+{"radhalo_id": 106, "findings_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 0.0, 1.0]}
+{"radhalo_id": 107, "findings_scores": [1.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 108, "findings_scores": [0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 109, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0, 0.0]}
+{"radhalo_id": 110, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 111, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 112, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0]}
+{"radhalo_id": 113, "findings_scores": [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 114, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 115, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0]}
+{"radhalo_id": 116, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 117, "findings_scores": [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0, 1.0]}
+{"radhalo_id": 118, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 119, "findings_scores": [1.0, 1.0, 1.0, 1.0, 0.0], "impression_scores": [1.0]}
+{"radhalo_id": 120, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 121, "findings_scores": [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0], "impression_scores": [1.0, 0.0]}
+{"radhalo_id": 122, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 123, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 124, "findings_scores": [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 125, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 126, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 127, "findings_scores": [0.0, 0.0], "impression_scores": [0.0, 1.0]}
+{"radhalo_id": 128, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 129, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 130, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 131, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 132, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 133, "findings_scores": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 134, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 135, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 136, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 137, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 138, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 139, "findings_scores": [0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0]}
+{"radhalo_id": 140, "findings_scores": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 141, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 142, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 143, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0, 1.0]}
+{"radhalo_id": 144, "findings_scores": [1.0, 1.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 145, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 146, "findings_scores": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0]}
+{"radhalo_id": 147, "findings_scores": [0.0], "impression_scores": [1.0]}
+{"radhalo_id": 148, "findings_scores": [1.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 149, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 150, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 1.0, 1.0]}
+{"radhalo_id": 151, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 152, "findings_scores": [0.0, 0.0, 1.0], "impression_scores": [1.0]}
+{"radhalo_id": 153, "findings_scores": [1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 154, "findings_scores": [0.0, 1.0, 0.0, 1.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 155, "findings_scores": [0.0, 0.0, 0.0, 1.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 156, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 157, "findings_scores": [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 158, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 159, "findings_scores": [0.0], "impression_scores": [1.0]}
+{"radhalo_id": 160, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0]}
+{"radhalo_id": 161, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 162, "findings_scores": [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 163, "findings_scores": [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 164, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 165, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 166, "findings_scores": [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 167, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 168, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 169, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 170, "findings_scores": [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 171, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 172, "findings_scores": [0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 173, "findings_scores": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 174, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 175, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 176, "findings_scores": [0.0, 0.0, 0.0, 1.0, 1.0, 0.0], "impression_scores": [0.0, 1.0, 0.0]}
+{"radhalo_id": 177, "findings_scores": [0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 178, "findings_scores": [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [0.0, 1.0]}
+{"radhalo_id": 179, "findings_scores": [1.0, 0.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 180, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 181, "findings_scores": [0.0, 0.0, 1.0], "impression_scores": [0.0]}
+{"radhalo_id": 182, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 183, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 184, "findings_scores": [0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 185, "findings_scores": [1.0, 1.0, 0.0, 1.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 186, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0, 0.0, 0.0, 1.0, 1.0]}
+{"radhalo_id": 187, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 188, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0]}
+{"radhalo_id": 189, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 190, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 1.0, 0.0]}
+{"radhalo_id": 191, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 192, "findings_scores": [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0]}
+{"radhalo_id": 193, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 194, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0]}
+{"radhalo_id": 195, "findings_scores": [0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 196, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 197, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 1.0, 0.0]}
+{"radhalo_id": 198, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0]}
+{"radhalo_id": 199, "findings_scores": [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 200, "findings_scores": [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 201, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 202, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 203, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 204, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 205, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 206, "findings_scores": [0.0, 1.0, 1.0, 1.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 207, "findings_scores": [1.0, 0.0, 0.0, 0.0, 1.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 208, "findings_scores": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 209, "findings_scores": [0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 210, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 211, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 212, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 213, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 214, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 215, "findings_scores": [0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 216, "findings_scores": [0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0]}
+{"radhalo_id": 217, "findings_scores": [0.0, 0.0, 0.0, 1.0, 0.0, 1.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 218, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 0.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 219, "findings_scores": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0]}
+{"radhalo_id": 220, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 221, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]}
+{"radhalo_id": 222, "findings_scores": [1.0, 1.0, 1.0, 1.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 223, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0], "impression_scores": [0.0, 1.0, 0.0]}
+{"radhalo_id": 224, "findings_scores": [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 225, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0]}
+{"radhalo_id": 226, "findings_scores": [0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 227, "findings_scores": [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 228, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 229, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 230, "findings_scores": [0.0, 0.0, 0.0, 1.0, 1.0], "impression_scores": [0.0]}
+{"radhalo_id": 231, "findings_scores": [1.0, 0.0, 0.0, 1.0, 0.0], "impression_scores": [0.0, 1.0, 1.0, 1.0, 1.0, 1.0]}
+{"radhalo_id": 232, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 233, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 234, "findings_scores": [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 235, "findings_scores": [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 236, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 237, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 238, "findings_scores": [1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [1.0, 1.0, 0.0]}
+{"radhalo_id": 239, "findings_scores": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0]}
+{"radhalo_id": 240, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 241, "findings_scores": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 242, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0], "impression_scores": [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 243, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 244, "findings_scores": [0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0], "impression_scores": [1.0, 1.0, 0.0]}
+{"radhalo_id": 245, "findings_scores": [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0]}
+{"radhalo_id": 246, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0]}
+{"radhalo_id": 247, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 248, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 249, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 250, "findings_scores": [0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 251, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 252, "findings_scores": [0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 253, "findings_scores": [0.0, 1.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 254, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 255, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 1.0]}
+{"radhalo_id": 256, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 257, "findings_scores": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 258, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 259, "findings_scores": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 260, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 261, "findings_scores": [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 262, "findings_scores": [1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 263, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 264, "findings_scores": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 265, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 266, "findings_scores": [0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 267, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 268, "findings_scores": [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0]}
+{"radhalo_id": 269, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 270, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 271, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 272, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 273, "findings_scores": [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0]}
+{"radhalo_id": 274, "findings_scores": [0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 275, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 276, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0]}
+{"radhalo_id": 277, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 278, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 279, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 280, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 281, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 282, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0]}
+{"radhalo_id": 283, "findings_scores": [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 284, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 285, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0]}
+{"radhalo_id": 286, "findings_scores": [0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 287, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0], "impression_scores": [0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 288, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 289, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 290, "findings_scores": [1.0, 0.0, 1.0, 1.0, 1.0, 0.0], "impression_scores": [0.0, 0.0, 1.0, 1.0]}
+{"radhalo_id": 291, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0]}
+{"radhalo_id": 292, "findings_scores": [0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0]}
+{"radhalo_id": 293, "findings_scores": [0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 294, "findings_scores": [1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0]}
+{"radhalo_id": 295, "findings_scores": [0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0], "impression_scores": [0.0, 0.0, 0.0]}
+{"radhalo_id": 296, "findings_scores": [1.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [1.0, 1.0, 1.0, 1.0, 1.0, 0.0]}
+{"radhalo_id": 297, "findings_scores": [0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 298, "findings_scores": [0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0], "impression_scores": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}
+{"radhalo_id": 299, "findings_scores": [1.0, 0.0, 0.0, 1.0], "impression_scores": [0.0]}
