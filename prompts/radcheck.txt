@@ -1,0 +1,13 @@
+### TASK: {task}
+
+[CONTEXT]
+{context}
+
+[FINDINGS]
+{findings_text}
+
+[IMPRESSION]
+{impression_text}
+
+[CANDIDATE SENTENCE]
+{candidate_sentence}

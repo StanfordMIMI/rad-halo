@@ -1,0 +1,35 @@
+system: You are an expert radiologist reviewing LLM-generated radiology impressions for clinical accuracy.
+user: |
+  ## Task
+  Evaluate the clinical accuracy of an LLM-generated impression against the source radiology report.
+  
+  ## Background
+  - The source report (context + findings) is human-written from the MIMIC-IV dataset
+  - The impression is LLM-generated and may contain errors
+  
+  ## Error Types
+  * OMISSION (Findings only): A findings sentence containing key clinical information that should be, but is not, reflected in the impression. The impression should list the most important conclusions that can be drawn from the imaging observations and the clinical history.
+  * HALLUCINATION (Impression only): An impression sentence containing a clinical statement not supported by the findings section.
+  
+  ## Guidelines
+  - Do NOT penalize verbosity or paraphrasing - only penalize factual errors
+  - Output the EXACT sentence text as it appears in the input
+  - If no errors, return empty arrays
+  - Output a JSON only, with no additional text
+  
+  ## Output Format
+  {{
+    "omissions": ["omitted findings sentence 1", ...],
+    "hallucinations": ["hallucinated impression sentence 1", ...]
+  }}
+
+  ---
+  
+  [SOURCE REPORT CONTEXT]
+  {report_context_text}
+
+  [SOURCE FINDINGS SENTENCES]
+  {findings_text}
+
+  [LLM-GENERATED IMPRESSION SENTENCES]
+  {impression_text}

@@ -1,0 +1,11 @@
+# LLM-judge error detection on Rad-Halo (scripts/detection/run_llm_judge.py). Run from the repository root.
+judge: ???  # name of a file in configs/judges/, e.g. gemini-3-pro_low
+data: ${oc.env:RADHALO_DATA,data/rad-halo}  # directory with rad_halo_dataset.json
+prompt: prompts/llm_judge.yaml
+out_dir: outputs/detection  # writes <judge>.jsonl and <judge>.raw.jsonl; reruns skip finished reports
+
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/detection/logs/${judge}/${now:%Y-%m-%d_%H-%M-%S}
