@@ -1,14 +1,14 @@
 # Restricted data and local artifacts
-data/
-outputs/
-multirun/
-checkpoints/
+/data/
+/outputs/
+/multirun/
+/checkpoints/
 wandb/
 *.safetensors
 *.bin
 
 # Private paper repository
-paper/
+/paper/
 
 # Secrets
 .env
