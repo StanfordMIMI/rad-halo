@@ -28,7 +28,6 @@ THEMATIC_CLUSTERS = [
     ("unsupported information", "Unsupported information", "thematicunsupportedpct"),
     ("ambiguity", "Ambiguity", "thematicambiguitypct"),
 ]
-TOP_MODALITY_ANATOMY = 7
 
 
 def metric_value(df: pd.DataFrame, metric: str):
@@ -110,22 +109,19 @@ def dataset_numbers(m: Macros, csv, tables) -> None:
     write_table(tables / "error_by_stratum.tex", lines)
 
 
-def modality_anatomy(m: Macros, csv) -> None:
-    """Table 1 block, emitted as a macro: \\input cannot be used inside a tabular row scan."""
-    counts = csv("modality_anatomy_counts").sort_values("num_reports", ascending=False, kind="stable")
+def modalities(m: Macros, csv) -> None:
+    """Table 1 modality block, emitted as a macro: \\input cannot be used inside a tabular row scan."""
+    counts = csv("modality_anatomy_counts")
     total = int(counts["num_reports"].sum())
-    top = counts.head(TOP_MODALITY_ANATOMY)
-    n_other = len(counts) - TOP_MODALITY_ANATOMY
-    other = total - int(top["num_reports"].sum())
-    rows = []
-    for _, row in top.iterrows():
-        modality, anatomy = row["modality_anatomy"].split(" ", 1)
-        n = int(row["num_reports"])
-        rows.append(f"\\quad {modality} -- {anatomy} & {n} ({fmt(100 * n / total, 1)}\\%) \\\\")
-    rows.append(f"\\quad Other ({n_other} combinations) & {other} ({fmt(100 * other / total, 1)}\\%) \\\\")
+    split = counts["modality_anatomy"].str.split(" ", n=1, expand=True)
+    counts = counts.assign(modality=split[0], anatomy=split[1])
+    by_modality = counts.groupby("modality")["num_reports"].sum().sort_values(ascending=False, kind="stable")
     m.add("nummodalityanatomy", len(counts))
-    m.add("numothermodalityanatomy", n_other)
-    m.add("modalityanatomyrows", " ".join(rows))
+    m.add("nummodalities", len(by_modality))
+    m.add("nummodalitiesword", NUMBER_WORDS[len(by_modality)])
+    m.add("numanatomies", counts["anatomy"].nunique())
+    rows = [f"\\quad {mod} & {int(n)} ({fmt(100 * n / total, 1)}\\%) \\\\" for mod, n in by_modality.items()]
+    m.add("modalityrows", " ".join(rows))
 
 
 def annotation_numbers(m: Macros, csv, tables) -> None:
@@ -272,6 +268,14 @@ def detector_numbers(m: Macros, csv, tables) -> None:
     m.add("besthallfone", metrics["hall_f1"].max())
     m.add("radcheckhallfone", value(RADCHECK, "hall_f1"))
     m.add("radcheckomisfone", value(RADCHECK, "omis_f1"))
+    best_hall = metrics.loc[metrics["hall_f1"].idxmax(), "detector"]
+    for name, detector, prefix in [
+        ("besthallfone", best_hall, "hall"),
+        ("radcheckhallfone", RADCHECK, "hall"),
+        ("radcheckomisfone", RADCHECK, "omis"),
+    ]:
+        for bound in ("lower", "upper"):
+            m.add(f"{name}{bound}", value(detector, f"{prefix}_f1_ci_{bound}"))
     hall_iaa = float(lookup(overall, "error_type", "hallucination", "pairwise_f1"))
     m.add("numdetectorsabovehalliaa", NUMBER_WORDS[int((metrics["hall_f1"] > hall_iaa).sum())])
     m.add("numdetectors", NUMBER_WORDS[len(DETECTORS)])
@@ -400,7 +404,7 @@ def main() -> None:
 
     m = Macros()
     dataset_numbers(m, csv, tables)
-    modality_anatomy(m, csv)
+    modalities(m, csv)
     annotation_numbers(m, csv, tables)
     agreement_numbers(m, csv, tables)
     detector_numbers(m, csv, tables)
