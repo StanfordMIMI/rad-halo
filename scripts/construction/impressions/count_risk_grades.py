@@ -1,6 +1,6 @@
 """Count MedVAL risk grades of all impressions generated until the 5/5/5/35 targets were met.
 
-Writes derived/risk_grade_counts.csv (App. A.7). Some sources were generated in a
+Recomputes derived/risk_grade_counts.csv (committed copy; App. A.7). Some sources were generated in a
 longer run and later truncated to the final targets; the generation order is restored
 from the seeded shuffle of the eligible reports, then buckets are filled until full.
 """
@@ -41,7 +41,7 @@ def main() -> None:
         "--logs", type=Path, required=True, help="directory with one generation log per source"
     )
     parser.add_argument("--eligible", type=Path, required=True, help="eligible reports (JSONL with note_id)")
-    parser.add_argument("--out", type=Path, default=Path("derived/risk_grade_counts.csv"))
+    parser.add_argument("--out", type=Path, default=Path("outputs/risk_grade_counts.csv"))
     args = parser.parse_args()
 
     eligible_note_ids = [r["note_id"] for r in read_jsonl(args.eligible)]

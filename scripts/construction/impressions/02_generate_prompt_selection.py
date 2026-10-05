@@ -30,7 +30,9 @@ def read_jsonl(path: Path) -> list[dict]:
 
 def main() -> None:
     load_dotenv()
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     parser.add_argument("--generator", required=True, help="name of a file in configs/generators/")
     parser.add_argument("--sample", type=Path, default=Path("data/prompt_selection/sample.jsonl"))
     parser.add_argument("--eligible", type=Path, default=Path("data/mimic_eligible.jsonl"))

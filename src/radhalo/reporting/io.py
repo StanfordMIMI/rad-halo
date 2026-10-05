@@ -5,10 +5,13 @@ import csv
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 REPO = Path(__file__).resolve().parents[3]
 
 
 def parse_args(description: str) -> argparse.Namespace:
+    load_dotenv()
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument(
         "--data",

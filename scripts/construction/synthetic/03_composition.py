@@ -1,6 +1,7 @@
 """Count synthetic training samples by error type and label (App. D.3).
 
-Writes derived/synthetic_composition.csv from the output of `02_create_synthetic_data.py`.
+Recomputes derived/synthetic_composition.csv (committed copy) from the output of
+`02_create_synthetic_data.py`.
 """
 
 import argparse
@@ -8,8 +9,6 @@ import csv
 import json
 from collections import Counter
 from pathlib import Path
-
-REPO = Path(__file__).resolve().parents[3]
 
 
 def composition(samples: list[dict]) -> dict[str, int]:
@@ -27,7 +26,7 @@ def composition(samples: list[dict]) -> dict[str, int]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, required=True, help="synthetic samples (JSONL)")
-    parser.add_argument("--out", type=Path, default=REPO / "derived" / "synthetic_composition.csv")
+    parser.add_argument("--out", type=Path, default=Path("outputs/synthetic_composition.csv"))
     args = parser.parse_args()
 
     with open(args.input) as f:

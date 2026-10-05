@@ -32,7 +32,7 @@ Manual steps in Label Studio are marked **[LS]**. File names are those of the or
 | 12 | **[LS]** adjudication (`label_studio/labeling_config_{hallucinations,omissions}.xml`) | disagreement tasks | adjudication exports |
 | 13 | `08_add_adjudications.py` | dataset + adjudication exports | `rad-halo_dataset_adjudicated.json` |
 | 14 | `09_finalize_dataset.py` | adjudicated dataset | `rad-halo_dataset_final.json` |
-| 15 | `build_physionet_release.py` | final dataset | release `data/`, `metadata/`, `code/` |
+| 15 | `build_physionet_release.py` | final dataset | release `data/`, `metadata/`, `code/`; `prompts/attribution_examples.yaml` (attribution examples 1-2, App. D.1) was added to the release by hand |
 
 Side analyses:
 

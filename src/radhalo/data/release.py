@@ -23,7 +23,10 @@ IMPRESSION_SOURCES = {
 
 def load_reports(data_dir: Path) -> list[dict]:
     """Return the 300 reports of `rad_halo_dataset.json`, ordered by radhalo_id."""
-    reports = json.loads((Path(data_dir) / "rad_halo_dataset.json").read_text())
+    path = Path(data_dir) / "rad_halo_dataset.json"
+    if not path.exists():
+        raise FileNotFoundError(f"{path} not found; set RADHALO_DATA to the Rad-Halo PhysioNet release")
+    reports = json.loads(path.read_text())
     return sorted(reports, key=lambda r: r["radhalo_id"])
 
 

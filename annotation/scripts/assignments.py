@@ -2,7 +2,7 @@
 
 Derived from the release labels. `partition` is the Label Studio task file a resident received:
 1 = ids 0-49 (annotator_1 and annotator_2), 2 = ids 50-174 (annotator_1), 3 = ids 175-299 (annotator_2),
-4 = annotator_3's half of ids 50-299, 5 = annotator_4's half. `extra` marks the 21 reports of partition 4
+4 = annotator_3's half of ids 50-299, 5 = annotator_4's half, and `extra` = the 21 reports of partition 4
 that annotator_4 annotated in addition. Partitions 4 and 5 were drawn outside the committed code.
 """
 

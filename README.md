@@ -16,7 +16,7 @@ text.
 
 | Level | Needs | Reproduces |
 |---|---|---|
-| **A. Analysis** | Rad-Halo from PhysioNet; CPU, ~1 min | Every number, table and figure in the paper's results |
+| **A. Analysis** | Rad-Halo from PhysioNet; CPU, ~2 min | Every number, table and figure in the paper's results |
 | **B. Detection** | Rad-Halo; Vertex AI / Anthropic API keys or a GPU | The detector predictions in `predictions/` |
 | **C. Construction and training** | MIMIC-IV-Note v2.2; Vertex AI, Anthropic; a GPU | Report selection, impression generation and MedVAL grading, prompt selection, synthetic training data, RadCheck training |
 
@@ -30,7 +30,8 @@ private annotation exports.
 conda create -n radhalo python=3.12 && conda activate radhalo
 pip install -e ".[dev]"            # level A
 pip install -e ".[nlp,api]"        # + segmentation, Gemini and Claude (levels B and C)
-pip install -e ".[local,vllm,train,medval]"   # + open-weights models, RadCheck training, MedVAL
+pip install -e ".[local,train,medval]"   # + open-weights models, RadCheck training, MedVAL
+pip install -e ".[vllm]"                 # Ministral 3B generator only (Linux + CUDA)
 pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_sm-0.5.4.tar.gz
 cp .env.example .env               # paths and API credentials
 ```
@@ -63,7 +64,8 @@ lets you check your run with `git diff results/`.
 | Table 3, agreement by source and risk level | `agreement.py` | `csv/agreement_*.csv` |
 | Fig. 3, full detector metrics, Limitations self-evaluation check | `detector_metrics.py` | `csv/detector_metrics.csv`, `csv/judge_flags_by_source.csv` |
 | All numbers quoted in the text and all result tables | `make_tables.py` | `values.tex`, `tables/*.tex` |
-| Fig. 3, risk-grade distribution (App. A) | `make_figures.py` | `figures/*.pdf` |
+| Fig. 3 (detector F1 vs. agreement) | `make_figures.py` | `figures/detector_performance.pdf` |
+| App. A.7 risk-grade distribution | `make_figures.py` | `figures/risk_grade_distribution.pdf` |
 
 Confidence intervals use a report-level bootstrap with 1,000 resamples (seed 0). RadCheck's threshold is
 the F1-optimal threshold on the evaluated sentences, re-optimized in every bootstrap replicate.
@@ -75,7 +77,7 @@ the F1-optimal threshold on the evaluated sentences, re-optimized in every boots
 python scripts/detection/run_llm_judge.py judge=<judge>
 
 # RadCheck 8B (GPU)
-python scripts/detection/run_radcheck.py --checkpoint <radcheck-checkpoint-dir> --out outputs/detection
+python scripts/detection/run_radcheck.py --checkpoint <radcheck-checkpoint-dir>
 ```
 
 Predictions are written as `outputs/detection/<detector>.jsonl` in the format of `predictions/`; judge runs
@@ -106,13 +108,15 @@ python scripts/construction/impressions/03_analyze_prompt_selection.py
 **Impression generation and MedVAL grading** (Sec. 3.3–3.4, App. A.3, A.5–A.7)
 ```bash
 python scripts/construction/impressions/04_generate_and_grade.py generator=<generator> random_seed=<seed>
+python scripts/construction/impressions/04_generate_and_grade.py generator=reference \
+    attribution_examples=<physionet>/prompts/attribution_examples.yaml
 ```
 `<generator>` is a file in `configs/generators/` (`reference` keeps the original impression). Rad-Halo used
 `random_seed=101` for `gemini-2.5-flash`, `claude-sonnet-4.5` and `llama-3.1-8b` and `0` for the others.
 The few-shot examples are MIMIC-IV-Note reports; the prompts contain placeholders that are filled from your
 copy of MIMIC using the note ids in `derived/few_shot_note_ids.csv`. MedVAL (Aali et al., MIT licence) is
-included in `src/radhalo/generation/medval.py`. `count_risk_grades.py` produces
-`derived/risk_grade_counts.csv` from the generation logs.
+included in `src/radhalo/generation/medval.py`. `count_risk_grades.py` recomputes
+`derived/risk_grade_counts.csv` from the generation logs (written to `outputs/` by default).
 
 **Synthetic training data** (Sec. 4.3, App. D)
 ```bash
@@ -127,7 +131,9 @@ python scripts/construction/synthetic/03_composition.py --input data/synthetic/r
 The attribution prompt (`prompts/attribution.yaml`) contains three worked examples derived from MIMIC-IV
 reports. Example 3 is rendered from your MIMIC copy (note id in `derived/few_shot_note_ids.csv`); examples 1
 and 2 are not single MIMIC reports and are distributed with the Rad-Halo PhysioNet release
-(`prompts/attribution_examples.yaml`).
+(`prompts/attribution_examples.yaml`). As in the paper runs, attribution uses the `vertexai` SDK with
+Gemini 2.5 Flash Lite in region `us-central1` (`GCP_LOCATION` is not used for this step).
+`03_composition.py` writes to `outputs/` by default; compare with `derived/synthetic_composition.csv`.
 
 **RadCheck training** (Sec. 4.2, App. C.4; one A100 40GB)
 ```bash
