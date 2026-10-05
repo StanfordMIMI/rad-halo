@@ -95,5 +95,5 @@ def main(cfg: DictConfig) -> None:
 
 
 if __name__ == "__main__":
-    load_dotenv()
+    load_dotenv(override=True)  # the project .env wins over the shell environment
     main()

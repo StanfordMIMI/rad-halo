@@ -14,7 +14,7 @@ from radhalo.data.mimic import eligible_chunks
 
 
 def main() -> None:
-    load_dotenv()
+    load_dotenv(override=True)  # the project .env wins over the shell environment
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--mimic-note-dir",

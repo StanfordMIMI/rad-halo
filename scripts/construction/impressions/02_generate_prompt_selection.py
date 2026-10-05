@@ -29,7 +29,7 @@ def read_jsonl(path: Path) -> list[dict]:
 
 
 def main() -> None:
-    load_dotenv()
+    load_dotenv(override=True)  # the project .env wins over the shell environment
     parser = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )

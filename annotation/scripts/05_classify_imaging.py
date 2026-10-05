@@ -101,7 +101,7 @@ def classify(
 
 
 def main() -> None:
-    load_dotenv()
+    load_dotenv(override=True)  # the project .env wins over the shell environment
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dataset", type=Path, required=True, help="rad-halo_dataset.json")
     parser.add_argument("--out", type=Path, required=True, help="Excel sheet for physician review")

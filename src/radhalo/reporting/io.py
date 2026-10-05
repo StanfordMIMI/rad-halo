@@ -11,7 +11,7 @@ REPO = Path(__file__).resolve().parents[3]
 
 
 def parse_args(description: str) -> argparse.Namespace:
-    load_dotenv()
+    load_dotenv(override=True)  # the project .env wins over the shell environment
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument(
         "--data",
