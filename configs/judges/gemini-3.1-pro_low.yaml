@@ -1,0 +1,9 @@
+# Gemini 3.1 Pro on Vertex AI (not part of the paper's evaluation), thinking level LOW.
+# Same settings as the paper's Gemini 3 Pro judges; set GCP_LOCATION=global.
+type: vertex_ai
+path: gemini-3.1-pro-preview
+max_new_tokens: 65536  # model maximum
+temperature: 1.0
+top_p: 0.95
+thinking:
+  level: LOW

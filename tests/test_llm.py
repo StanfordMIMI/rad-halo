@@ -137,3 +137,17 @@ def test_backends_import_without_heavy_dependencies():
         "assert not heavy, heavy"
     )
     subprocess.run([sys.executable, "-c", code], check=True)
+
+
+def test_vertex_request_uses_effort_and_structured_output():
+    from radhalo.llm.claude import vertex_request
+
+    cfg = {"path": "claude-opus-5-5", "max_new_tokens": 128000, "effort": "max"}
+    conversation = [{"role": "system", "content": "sys"}, {"role": "user", "content": "Fictional report."}]
+    request = vertex_request(cfg, conversation, {"type": "object"})
+    assert request["output_config"] == {
+        "effort": "max",
+        "format": {"type": "json_schema", "schema": {"type": "object"}},
+    }
+    assert request["system"] == "sys" and request["messages"] == [conversation[1]]
+    assert not {"temperature", "top_p", "thinking", "tools", "tool_choice"} & set(request)

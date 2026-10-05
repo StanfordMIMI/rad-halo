@@ -3,7 +3,8 @@
     python scripts/detection/run_llm_judge.py judge=gemini-3-pro_low
 
 Writes `<out_dir>/<judge>.jsonl` in the format of `predictions/` and the raw responses to
-`<out_dir>/<judge>.raw.jsonl`. Reports already in the prediction file are skipped, so an interrupted run
+`<out_dir>/<judge>.raw.jsonl` (token usage per request in `<judge>.usage.jsonl` where the backend reports it).
+Reports already in the prediction file are skipped, so an interrupted run
 resumes where it stopped. Any error other than an API overload stops the run.
 """
 
@@ -44,9 +45,12 @@ def main(cfg: DictConfig) -> None:
 
     done = finished_ids(predictions_path)
     reports = [r for r in load_reports(Path(cfg.data)) if r["radhalo_id"] not in done]
+    if cfg.max_reports is not None:
+        reports = reports[: max(cfg.max_reports - len(done), 0)]
     log.info("%s: %d reports to judge, %d already done", key, len(reports), len(done))
 
     judge = OmegaConf.to_container(OmegaConf.load(JUDGES / f"{key}.yaml"))
+    judge["usage_log"] = str(out_dir / f"{key}.usage.jsonl")
     predict = build_model(judge, response_schema(judge["type"]))
     prompt = load_prompt(Path(cfg.prompt))
 

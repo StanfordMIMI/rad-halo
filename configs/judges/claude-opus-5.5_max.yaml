@@ -1,0 +1,7 @@
+# Claude Opus 5.5 on Vertex AI (not part of the paper's evaluation), effort "max".
+# Thinking is always on (adaptive); the JSON answer is enforced by structured output.
+type: claude_vertex
+path: claude-opus-5-5
+region: global
+max_new_tokens: 128000  # model maximum
+effort: max

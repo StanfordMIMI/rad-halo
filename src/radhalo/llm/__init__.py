@@ -24,6 +24,10 @@ def build_model(cfg: Mapping, json_schema: dict | None = None) -> Predict:
         from radhalo.llm.claude import build_claude
 
         return build_claude(cfg, json_schema)
+    if backend == "claude_vertex":
+        from radhalo.llm.claude import build_claude_vertex
+
+        return build_claude_vertex(cfg, json_schema)
     if backend == "local":
         from radhalo.llm.local import build_hf
 

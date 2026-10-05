@@ -1,5 +1,6 @@
 """Gemini models on Vertex AI through the google-genai client."""
 
+import json
 import logging
 import os
 import time
@@ -78,12 +79,36 @@ def build_vertex(cfg: Mapping, json_schema: dict | None = None):
     )
     config = vertex_config(cfg, json_schema)
 
+    def log_usage(response, seconds: float) -> None:
+        """Append token usage of one response to `usage_log` (if configured)."""
+        usage = getattr(response, "usage_metadata", None)
+        if not cfg.get("usage_log") or usage is None:
+            return
+        finish = response.candidates[0].finish_reason if response.candidates else None
+        with open(cfg["usage_log"], "a") as f:
+            f.write(
+                json.dumps(
+                    {
+                        "input_tokens": usage.prompt_token_count,
+                        "output_tokens": (usage.candidates_token_count or 0)
+                        + (usage.thoughts_token_count or 0),
+                        "thinking_tokens": usage.thoughts_token_count,
+                        "stop_reason": str(finish),
+                        "seconds": round(seconds, 1),
+                    }
+                )
+                + "\n"
+            )
+
     def generate(request: dict) -> str:
         kwargs = {**request, "config": types.GenerateContentConfig(**request["config"])}
         for attempt in range(MAX_ATTEMPTS):
             last = attempt == MAX_ATTEMPTS - 1
             try:
-                text = client.models.generate_content(**kwargs).text
+                start = time.monotonic()
+                response = client.models.generate_content(**kwargs)
+                text = response.text
+                log_usage(response, time.monotonic() - start)
             except (errors.ServerError, errors.ClientError, TimeoutError) as e:
                 if last:
                     raise
