@@ -1,3 +1,4 @@
 # Paper: Table tab:appendix_generation_models, row "MIMIC-IV reference".
 type: "none"
 batch_size: 1
+path: "none"  # unused for seeding (type "none" uses the base seed); kept in the log config

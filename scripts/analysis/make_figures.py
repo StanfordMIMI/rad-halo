@@ -1,4 +1,4 @@
-"""Figure 3 (detector F1 vs. inter-annotator agreement) and the risk-grade distribution (App. A.6)."""
+"""Figure 3 (detector F1 vs. inter-annotator agreement) and the risk-grade distribution (App. A.7)."""
 
 import matplotlib
 

@@ -1,0 +1,44 @@
+# Impression generation prompt, strict instruction (App. A.4-A.6). The three few-shot examples are
+# MIMIC-IV-Note reports (derived/few_shot_note_ids.csv), filled in by radhalo.generation.prompts.
+system: |
+  You are an expert medical professional.
+user: |-
+  Summarize the findings into a highly condensed Impression.
+  Output only a bare numbered list.
+
+  GUIDELINES:
+  1. Clinical Queries: Answer any query posed by the referring clinician.
+  2. Content: Include ONLY clinically relevant and actionable findings. Synthesize normal findings (e.g., "Otherwise normal study"); do not list them individually.
+  1. Prioritization: List ONLY the most salient observations, strictly in order of importance.
+  4. Focus on Brevity: Minimize the number of bullet points. Avoid lists that obfuscate high-priority pathology.
+
+
+  [[ EXAMPLE 1 ]]
+  [REPORT]
+  {example_1_report}
+
+  [IMPRESSION]
+  {example_1_impression}
+
+
+  [[ EXAMPLE 2 ]]
+  [REPORT]
+  {example_2_report}
+
+  [IMPRESSION]
+  {example_2_impression}
+  
+
+  [[ EXAMPLE 3 ]]
+  [REPORT]
+  {example_3_report}
+
+  [IMPRESSION]
+  {example_3_impression}
+
+
+  [[ CURRENT SAMPLE ]]
+  [REPORT]
+  {full_report_text}
+
+  [IMPRESSION]

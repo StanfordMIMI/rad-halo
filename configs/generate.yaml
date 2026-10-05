@@ -1,0 +1,23 @@
+# Generate-and-grade loop (scripts/construction/impressions/04_generate_and_grade.py, Sec. 3.3-3.4).
+# Run from the repository root.
+# Rad-Halo used random_seed=101 for gemini-2.5-flash, claude-sonnet-4.5 and llama-3.1-8b (0 for the others).
+# All sources except the reference ran with larger uniform targets (35 or 13 per level) and were truncated
+# to the first 5/5/5/35 in generation order (count_risk_grades.py); a run with the targets below selects the
+# same impressions (batched generators also keep the rest of their last batch).
+generator: ???  # name of a file in configs/generators/, e.g. gemini-2.5-flash or reference
+eligible: data/mimic_eligible.jsonl  # output of preprocessing/01_filter_eligible.py
+prompt: prompts/generation_strict.yaml
+note_ids: derived/few_shot_note_ids.csv
+attribution_prompt: prompts/attribution.yaml  # reference only
+attribution_examples: null  # reference only: YAML with attribution examples 1-2 (see synthetic/01_attribute.py)
+targets: {1: 5, 2: 5, 3: 5, 4: 35}  # impressions per MedVAL risk level
+max_generations: 2000
+random_seed: 0
+medval_model: gemini-2.5-flash
+out_dir: outputs/generation  # writes <generator>.jsonl, rewritten after every batch
+
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: outputs/generation/logs/${generator}/${now:%Y-%m-%d_%H-%M-%S}

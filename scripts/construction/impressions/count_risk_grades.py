@@ -1,6 +1,6 @@
 """Count MedVAL risk grades of all impressions generated until the 5/5/5/35 targets were met.
 
-Writes derived/risk_grade_counts.csv (Appendix A.6). Some sources were generated in a
+Writes derived/risk_grade_counts.csv (App. A.7). Some sources were generated in a
 longer run and later truncated to the final targets; the generation order is restored
 from the seeded shuffle of the eligible reports, then buckets are filled until full.
 """
