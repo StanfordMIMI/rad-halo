@@ -156,10 +156,10 @@ def test_vertex_request_uses_effort_and_structured_output():
 def test_openai_request_uses_effort_and_strict_schema():
     from radhalo.llm.openai_api import openai_request
 
-    cfg = {"path": "gpt-6-astra", "max_new_tokens": 128000, "effort": "low"}
+    cfg = {"path": "gpt-6-astra", "max_new_tokens": 128000, "effort": "max"}
     conversation = [{"role": "system", "content": "sys"}, {"role": "user", "content": "Fictional report."}]
     request = openai_request(cfg, conversation, {"type": "object"})
-    assert request["reasoning_effort"] == "low" and request["store"] is False
-    assert request["response_format"]["json_schema"]["strict"] is True
-    assert request["messages"] == conversation
+    assert request["reasoning"] == {"effort": "max"} and request["store"] is False
+    assert request["text"]["format"]["strict"] is True
+    assert request["instructions"] == "sys" and request["input"] == "Fictional report."
     assert not {"temperature", "top_p"} & set(request)

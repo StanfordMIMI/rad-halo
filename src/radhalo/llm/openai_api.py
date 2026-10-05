@@ -1,7 +1,8 @@
-"""OpenAI reasoning models (e.g. GPT-6 Astra) through Chat Completions.
+"""OpenAI reasoning models (e.g. GPT-6 Astra) through the Responses API.
 
-Reasoning is always on; `effort` sets its depth. Sampling parameters are not accepted with reasoning.
-Responses are not stored by OpenAI (`store=False`); the key must belong to a zero-data-retention project.
+Reasoning is always on; `effort` sets its depth (GPT-6 Astra accepts "max" only on the Responses API).
+Sampling parameters are not accepted with reasoning. Responses are not stored by OpenAI (`store=False`);
+the key must belong to a zero-data-retention project.
 """
 
 import json
@@ -13,27 +14,38 @@ SCHEMA_NAME = "judge_output"
 
 
 def openai_request(cfg: Mapping, conversation: list[dict], json_schema: dict | None = None) -> dict:
-    """Keyword arguments of `chat.completions.create` for one conversation."""
+    """Keyword arguments of `responses.create` for one conversation."""
     request = {
         "model": cfg["path"],
-        "messages": conversation,
-        "reasoning_effort": cfg["effort"],
-        "max_completion_tokens": cfg["max_new_tokens"],
+        "instructions": conversation[0]["content"],
+        "input": conversation[1]["content"],
+        "reasoning": {"effort": cfg["effort"]},
+        "max_output_tokens": cfg["max_new_tokens"],
         "store": False,
     }
     if json_schema is not None:
-        request["response_format"] = {
-            "type": "json_schema",
-            "json_schema": {"name": SCHEMA_NAME, "schema": json_schema, "strict": True},
+        request["text"] = {
+            "format": {"type": "json_schema", "name": SCHEMA_NAME, "schema": json_schema, "strict": True}
         }
     return request
+
+
+def output_text(response) -> str:
+    """Text of the message output; raises on incomplete and refused responses."""
+    if response.status != "completed":
+        reason = getattr(response.incomplete_details, "reason", None)
+        raise RuntimeError(f"response status {response.status} ({reason})")
+    parts = [c for item in response.output if item.type == "message" for c in item.content]
+    if any(c.type == "refusal" for c in parts):
+        raise RuntimeError("model refused")
+    return "".join(c.text for c in parts if c.type == "output_text")
 
 
 def build_openai(cfg: Mapping, json_schema: dict | None = None):
     """Batch prediction function for an `openai_api` config (OPENAI_API_KEY).
 
-    With `usage_log` in the config, token usage, finish reason and duration of every request are appended
-    to that JSONL file. A truncated or refused response raises instead of returning partial output.
+    With `usage_log` in the config, token usage, status and duration of every request are appended to
+    that JSONL file.
     """
     from openai import OpenAI
 
@@ -41,28 +53,23 @@ def build_openai(cfg: Mapping, json_schema: dict | None = None):
 
     def respond(conversation: list[dict]) -> str:
         start = time.monotonic()
-        response = client.chat.completions.create(**openai_request(cfg, conversation, json_schema))
-        choice = response.choices[0]
+        response = client.responses.create(**openai_request(cfg, conversation, json_schema))
         if cfg.get("usage_log"):
             usage = response.usage
-            details = getattr(usage, "completion_tokens_details", None)
             with open(cfg["usage_log"], "a") as f:
                 f.write(
                     json.dumps(
                         {
-                            "input_tokens": usage.prompt_tokens,
-                            "output_tokens": usage.completion_tokens,
-                            "thinking_tokens": getattr(details, "reasoning_tokens", None),
-                            "stop_reason": choice.finish_reason,
+                            "input_tokens": usage.input_tokens,
+                            "output_tokens": usage.output_tokens,
+                            "thinking_tokens": usage.output_tokens_details.reasoning_tokens,
+                            "stop_reason": response.status,
                             "seconds": round(time.monotonic() - start, 1),
                         }
                     )
                     + "\n"
                 )
-        if choice.message.refusal or choice.finish_reason != "stop":
-            refused = bool(choice.message.refusal)
-            raise RuntimeError(f"{cfg['path']} finished with {choice.finish_reason} (refusal: {refused})")
-        return choice.message.content
+        return output_text(response)
 
     def predict(conversations: list[list[dict]]) -> list[str]:
         return [respond(c) for c in conversations]
