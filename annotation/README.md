@@ -101,14 +101,11 @@ impression sentences, as in the original analysis.
 
 ## Label Studio configurations (`label_studio/`)
 
-| File | Project | Status |
-|---|---|---|
-| `labeling_config_hallucinations.xml`, `labeling_config_omissions.xml` | adjudication | original |
-| `annotation.xml` | resident annotation | reconstructed |
-| `pilot.xml` | pilot annotation | reconstructed |
-| `prehighlight_review.xml` | pre-highlight review | reconstructed |
-| `thematic_coding.xml` | thematic coding | reconstructed |
-| `example_task.json` | fictional task of the interface figure | original |
-
-Reconstructed configurations reproduce the control names, targets and label values found in the exports;
-layout, instructions and styling of the original projects are not recovered.
+| File | Project |
+|---|---|
+| `annotation.xml` | resident annotation |
+| `pilot.xml` | pilot annotation |
+| `prehighlight_review.xml` | pre-highlight review |
+| `labeling_config_hallucinations.xml`, `labeling_config_omissions.xml` | adjudication |
+| `thematic_coding.xml` | thematic coding (one project per error type, same configuration) |
+| `example_task.json` | fictional task of the interface figure |

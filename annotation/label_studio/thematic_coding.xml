@@ -1,27 +1,57 @@
-<!-- Thematic coding projects (App. E.3); one project per error type.
-  Reconstructed from the structure of the Label Studio export of the hallucination project (control
-  names, target names and label values); layout and instructions of the original are not recovered.
-  The "Error" span is pre-highlighted read-only by scripts/thematic_extract.py. "theme" holds
-  "theme name [cluster name]" (exported by scripts/thematic_export.py); "initial_code" and "notes" are
-  free text and are not released. -->
 <View>
-  <View style="display: flex; gap: 20px;">
-    <View style="flex: 1;">
-      <Header value="REPORT" size="6"/>
-      <Labels name="label_findings" toName="text_findings">
-        <Label value="Error" background="#ff0000"/>
-      </Labels>
-      <Text name="text_findings" value="$findings_text"/>
-    </View>
-    <View style="flex: 1;">
-      <Header value="IMPRESSION" size="6"/>
-      <Labels name="label_impression" toName="text_impression">
-        <Label value="Error" background="#ff0000"/>
-      </Labels>
-      <Text name="text_impression" value="$impression_text"/>
-    </View>
+  <!-- Metadata -->
+  <View style="background: #f8f9fa; border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin-bottom: 20px;">
+    <Header value="Rad-HalO ID: $radhalo_id | Risk Level: $medval_risk_level | Annotators Agree: $annotators_agree" size="4" style="margin: 0; color: #333;" />
   </View>
-  <TextArea name="initial_code" toName="text_findings" rows="2"/>
-  <TextArea name="notes" toName="text_findings" rows="3"/>
-  <TextArea name="theme" toName="text_findings" rows="1"/>
+
+  <!-- Report and Impression side by side -->
+  <View style="display: flex; gap: 20px;">
+
+    <View style="flex: 1; background: #ffffff; padding: 15px; border: 1px solid #ccc; border-radius: 4px;">
+      <Header value="REPORT" size="6" style="color: #666;"/>
+
+      <Labels name="label_findings" toName="text_findings">
+        <Label value="Error" background="#ff0000" />
+      </Labels>
+
+      <Text name="text_findings"
+            value="$findings_text"
+            selectionEnabled="false"
+            granularity="word" />
+    </View>
+
+    <View style="flex: 1; background: #ffffff; padding: 15px; border: 1px solid #ccc; border-radius: 4px;">
+      <Header value="IMPRESSION" size="6" style="color: #666;"/>
+
+      <Labels name="label_impression" toName="text_impression">
+        <Label value="Error" background="#ff0000" />
+      </Labels>
+
+      <Text name="text_impression"
+            value="$impression_text"
+            selectionEnabled="false"
+            granularity="sentence" />
+    </View>
+
+  </View>
+
+  <!-- Qualitative coding -->
+  <View style="margin-top: 20px; background: #ffffff; padding: 15px; border: 1px solid #ccc; border-radius: 4px;">
+    <Header value="Qualitative Coding" size="4" style="color: #333; margin-top: 0;" />
+
+    <TextArea name="initial_code" toName="text_findings"
+      editable="true" perRegion="false" required="false"
+      maxSubmissions="1" rows="2"
+      placeholder="Initial code(s)..." />
+
+    <TextArea name="theme" toName="text_findings"
+      editable="true" perRegion="false" required="false"
+      maxSubmissions="1" rows="2"
+      placeholder="Theme..." />
+
+    <TextArea name="notes" toName="text_findings"
+      editable="true" perRegion="false" required="false"
+      maxSubmissions="1" rows="3"
+      placeholder="Notes..." />
+  </View>
 </View>

@@ -1,27 +1,79 @@
-<!-- Resident annotation projects (Sec. 3.5, App. B).
-  Reconstructed from the structure of the Label Studio exports (control names, target names and label
-  values); layout, instructions and styling of the original project are not recovered. Colours follow the
-  annotation interface figure: grey = awaiting review, red = error, green = no error.
-  Tasks: output of scripts/03_split_partitions.py (findings highlights = reviewed pre-highlights). -->
 <View>
+  <View style="background: #f8f9fa; border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin-bottom: 20px;">
+
+      <Header value="🔎 Annotation Guidelines" size="4" style="margin-top: 0; margin-bottom: 15px; color: #333;"/>
+
+      <View style="margin-bottom: 20px; padding-left: 5px;">
+
+        <View style="display: flex; flex-direction: row; margin-bottom: 8px;">
+          <Text name="icon_1" value="🎯" style="font-weight: bold; margin-right: 8px;"/>
+          <Text name="instruction" value="Objective: Evaluate the clinical accuracy of an LLM-generated impression against the source radiology report." style="font-size: 13px; font-weight: 500;"/>
+        </View>
+
+        <View style="display: flex; flex-direction: row; margin-bottom: 8px;">
+          <Text name="icon_2" value="⚙️" style="font-weight: bold; margin-right: 8px;"/>
+          <Text name="setup" value="Setup: The left-side report is human-written and sampled from the MIMIC-IV dataset. The right-side impression is LLM-generated based on the left-side report. It may contain errors:" style="font-size: 13px; font-weight: 500;"/>
+        </View>
+      </View>
+
+      <View style="display: flex; gap: 30px; margin-bottom: 20px;">      
+        <View style="width: 50%; background: #fff5f5; padding: 10px; border-radius: 4px; border-left: 4px solid #c0392b;">
+          <Text name="o_def" value="OMISSION (Left Side)" style="font-weight: bold; color: #2980b9; font-size: 13px; display: block; margin-bottom: 5px;"/>
+          <Text name="o_desc" value="Any sentence containing key clinical information that should be, but is not, included in the impression." style="font-size: 12px; color: #444; line-height: 1.4;"/>
+        </View>
+
+        <View style="width: 50%; background: #fff5f5; padding: 10px; border-radius: 4px; border-left: 4px solid #c0392b;">
+          <Text name="h_def" value="HALLUCINATION (Right Side)" style="font-weight: bold; color: #c0392b; font-size: 13px; display: block; margin-bottom: 5px;"/>
+          <Text name="h_desc" value="Any sentence containing a statement clinically not supported by the findings section." style="font-size: 12px; color: #444; line-height: 1.4;"/>
+        </View>
+      </View>
+
+      <View style="padding-top: 15px; border-top: 1px dashed #ccc; padding-left: 5px;">
+
+        <View style="display: flex; flex-direction: row; margin-bottom: 8px;">
+          <Text name="icon_3" value="ℹ️" style="margin-right: 8px;"/>
+          <Text name="bullet1" value="Please label all pre-selected sentences on both sides. In the report, specific sentences have been pre-selected based on their clinical relevance. In the impression, every sentence is pre-selected." style="font-size: 12px; line-height: 1.4;"/>
+        </View>
+
+        <View style="display: flex; flex-direction: row;">
+          <Text name="icon_4" value="ℹ️" style="margin-right: 8px;"/>
+          <Text name="bullet2" value="The generated impressions may be overly wordy. Do not penalize verbosity. Only penalize factual errors or clinically significant omissions." style="font-size: 12px; line-height: 1.4;"/>
+        </View>
+      </View>
+
+  </View>
+  
   <View style="display: flex; gap: 20px;">
-    <View style="flex: 1;">
-      <Header value="REPORT" size="6"/>
+    
+    <View style="flex: 1; background: #ffffff; padding: 15px; border: 1px solid #ccc; border-radius: 4px;">
+      <Header value="REPORT" size="6" style="color: #666;"/>
+      
       <Labels name="label_findings" toName="text_findings">
-        <Label value="To Review" background="#838383"/>
-        <Label value="OMISSION" background="#ff0000"/>
-        <Label value="NO_OMISSION" background="#008000"/>
+        <Label value="To Review" background="#838383" />
+        <Label value="Omission" background="#ff0000" alias="OMISSION" hotkey="1"/>
+        <Label value="Not an omission" background="#008000" alias="NO_OMISSION" hotkey="2"/>
       </Labels>
-      <Text name="text_findings" value="$findings_text"/>
+      
+      <Text name="text_findings" 
+            value="$findings_text" 
+            selectionEnabled="true" 
+            granularity="word" />
     </View>
-    <View style="flex: 1;">
-      <Header value="IMPRESSION" size="6"/>
+
+    <View style="flex: 1; background: #ffffff; padding: 15px; border: 1px solid #ccc; border-radius: 4px;">
+      <Header value="IMPRESSION" size="6" style="color: #666;"/>
+      
       <Labels name="label_impression" toName="text_impression">
-        <Label value="To Review" background="#838383"/>
-        <Label value="HALLUCINATION" background="#ff0000"/>
-        <Label value="NO_HALLUCINATION" background="#008000"/>
+        <Label value="To Review" background="#838383" />
+        <Label value="Hallucination" background="#ff0000" alias="HALLUCINATION" hotkey="1"/>
+        <Label value="Supported / correct" background="#008000" alias="NO_HALLUCINATION" hotkey="2"/>
       </Labels>
-      <Text name="text_impression" value="$impression_text"/>
+      
+      <Text name="text_impression" 
+            value="$impression_text" 
+            selectionEnabled="true" 
+            granularity="sentence" />
     </View>
+    
   </View>
 </View>

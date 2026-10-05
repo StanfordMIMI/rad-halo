@@ -1,23 +1,65 @@
-<!-- Pre-highlight review project (App. B.3): a physician added or removed "To Review" highlights.
-  Reconstructed from the structure of the Label Studio exports (control names, target names and label
-  values); layout, instructions and styling of the original project are not recovered. Colours follow the
-  annotation interface figure: grey = awaiting review, red = error, green = no error.
-  Tasks: tasks.json of scripts/01_prepare_tasks.py; the export goes to scripts/02_import_prehighlight_review.py. -->
 <View>
   <View style="display: flex; gap: 20px;">
-    <View style="flex: 1;">
-      <Header value="REPORT" size="6"/>
+    
+    <View style="flex: 1; padding: 15px; border: 1px solid #ccc; border-radius: 4px;">
+      <Header value="Findings: Check for Omissions" size="6" style="color: #666;"/>
+      
       <Labels name="label_findings" toName="text_findings">
-        <Label value="To Review" background="#838383"/>
+        <Label value="To Review" background="#d3d3d3" />
+        <Label value="OMISSION" background="#ff0000" alias="True" hotkey="1"/>
+        <Label value="Present" background="#008000" alias="False" hotkey="2"/>
       </Labels>
-      <Text name="text_findings" value="$findings_text"/>
+      
+      <Text name="text_findings" 
+            value="$findings_text" 
+            selectionEnabled="false" 
+            granularity="sentence" />
     </View>
-    <View style="flex: 1;">
-      <Header value="IMPRESSION" size="6"/>
+
+    <View style="flex: 1; padding: 15px; border: 1px solid #ccc; border-radius: 4px;">
+      <Header value="Impression: Check for Hallucinations" size="6" style="color: #666;"/>
+      
       <Labels name="label_impression" toName="text_impression">
-        <Label value="To Review" background="#838383"/>
+        <Label value="To Review" background="#d3d3d3" />
+        <Label value="HALLUCINATION" background="#ff0000" hotkey="q"/>
+        <Label value="Correct" background="#008000" hotkey="w"/>
       </Labels>
-      <Text name="text_impression" value="$impression_text"/>
+      
+      <Text name="text_impression" 
+            value="$impression_text" 
+            selectionEnabled="false" 
+            granularity="sentence" />
     </View>
+    
   </View>
+
+  <Style>
+    /* 1. Make the span look like a clickable button (Hand cursor) */
+    [class*="highlight"] {
+      cursor: pointer !important;
+      border-radius: 2px; /* Optional: makes highlights look neater */
+    }
+
+    /* 2. HIDE HANDLES - Wildcard for any class containing "handle" */
+    [class*="handle"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+
+    /* 3. HIDE PSEUDO-ELEMENT HANDLES (Used in newer LS versions) */
+    [class*="highlight"]::before, 
+    [class*="highlight"]::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    /* 4. HIDE SPECIFIC LSF CLASSES (Legacy support) */
+    .lsf-region-handle, .lsf-resize-handle {
+      display: none !important;
+    }
+  </Style>
 </View>
