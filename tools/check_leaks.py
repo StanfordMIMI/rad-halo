@@ -17,7 +17,9 @@ PATTERNS = {
     "MIMIC de-identification token": re.compile(r"_{3}"),
     "MIMIC note id": re.compile(r"\b\d{8}-RR-\d+\b"),
     "absolute local path": re.compile(r"(/Users/|/home/)[A-Za-z]"),
-    "API key": re.compile(r"(sk-ant-[A-Za-z0-9]|hf_[A-Za-z0-9]{20}|AIza[0-9A-Za-z_-]{20})"),
+    "API key": re.compile(
+        r"(sk-ant-[A-Za-z0-9]|sk-(proj-)?[A-Za-z0-9_-]{20}|hf_[A-Za-z0-9]{20}|AIza[0-9A-Za-z_-]{20})"
+    ),
 }
 # Files that legitimately contain one of the patterns.
 ALLOWED = {

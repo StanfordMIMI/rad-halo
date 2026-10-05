@@ -28,6 +28,10 @@ def build_model(cfg: Mapping, json_schema: dict | None = None) -> Predict:
         from radhalo.llm.claude import build_claude_vertex
 
         return build_claude_vertex(cfg, json_schema)
+    if backend == "openai_api":
+        from radhalo.llm.openai_api import build_openai
+
+        return build_openai(cfg, json_schema)
     if backend == "local":
         from radhalo.llm.local import build_hf
 

@@ -1,0 +1,6 @@
+# GPT-6 Astra through the OpenAI API, reasoning effort "max" (lowest/highest available).
+# Reasoning is always on; the JSON answer is enforced by structured output (strict schema).
+type: openai_api
+path: gpt-6-astra
+max_new_tokens: 128000  # model maximum
+effort: max

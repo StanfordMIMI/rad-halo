@@ -37,6 +37,7 @@ local = [
 ]
 vllm = ["vllm==0.15.0"]
 train = ["datasets==4.4.2", "wandb==0.23.1"]
+openai = ["openai==1.61.0"]  # dspy 2.6.14 (medval) requires openai<=1.61
 medval = ["dspy==2.6.14"]
 annotation = ["openpyxl>=3.1"]
 dev = ["pytest>=8", "hypothesis>=6", "ruff>=0.6", "pre-commit>=3"]
