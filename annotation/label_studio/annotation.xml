@@ -1,0 +1,27 @@
+<!-- Resident annotation projects (Sec. 3.5, App. B).
+  Reconstructed from the structure of the Label Studio exports (control names, target names and label
+  values); layout, instructions and styling of the original project are not recovered. Colours follow the
+  annotation interface figure: grey = awaiting review, red = error, green = no error.
+  Tasks: output of scripts/03_split_partitions.py (findings highlights = reviewed pre-highlights). -->
+<View>
+  <View style="display: flex; gap: 20px;">
+    <View style="flex: 1;">
+      <Header value="REPORT" size="6"/>
+      <Labels name="label_findings" toName="text_findings">
+        <Label value="To Review" background="#838383"/>
+        <Label value="OMISSION" background="#ff0000"/>
+        <Label value="NO_OMISSION" background="#008000"/>
+      </Labels>
+      <Text name="text_findings" value="$findings_text"/>
+    </View>
+    <View style="flex: 1;">
+      <Header value="IMPRESSION" size="6"/>
+      <Labels name="label_impression" toName="text_impression">
+        <Label value="To Review" background="#838383"/>
+        <Label value="HALLUCINATION" background="#ff0000"/>
+        <Label value="NO_HALLUCINATION" background="#008000"/>
+      </Labels>
+      <Text name="text_impression" value="$impression_text"/>
+    </View>
+  </View>
+</View>

@@ -27,3 +27,6 @@ dist/
 .DS_Store
 .vscode/
 .idea/
+
+# Label Studio user ids (private)
+/annotation/user_map.yaml

@@ -1,0 +1,43 @@
+<View>
+  <View style="background: #f8f9fa; border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin-bottom: 20px;">
+    <Header value="Hallucination Adjudication" size="4" style="margin-top: 0; margin-bottom: 15px; color: #333;"/>
+
+    <View style="margin-bottom: 15px; padding-left: 5px;">
+      <View style="display: flex; flex-direction: row; margin-bottom: 8px;">
+        <Text name="instruction" value="The highlighted sentence in the IMPRESSION was disputed by the annotators. Decide whether it is a hallucination." style="font-size: 13px; font-weight: 500;"/>
+      </View>
+    </View>
+
+    <View style="background: #fff5f5; padding: 10px; border-radius: 4px; border-left: 4px solid #c0392b; margin-bottom: 15px;">
+      <Text name="h_def" value="HALLUCINATION: Any sentence containing a statement clinically not supported by the findings section." style="font-weight: bold; color: #c0392b; font-size: 12px;"/>
+    </View>
+
+    <View style="padding-top: 10px; border-top: 1px dashed #ccc;">
+      <Text name="annotator_info" value="$annotator_labels" style="font-size: 12px; color: #555;"/>
+    </View>
+  </View>
+
+  <View style="display: flex; gap: 20px;">
+    <View style="flex: 1; background: #ffffff; padding: 15px; border: 1px solid #ccc; border-radius: 4px;">
+      <Header value="REPORT" size="6" style="color: #666;"/>
+      <Text name="text_findings" value="$findings_text"/>
+    </View>
+
+    <View style="flex: 1; background: #ffffff; padding: 15px; border: 1px solid #ccc; border-radius: 4px;">
+      <Header value="IMPRESSION" size="6" style="color: #666;"/>
+
+      <Labels name="label_impression" toName="text_impression">
+        <Label value="To Review" background="#838383"/>
+        <Label value="Hallucination" background="#ff0000" hotkey="1"/>
+        <Label value="Not a hallucination" background="#008000" hotkey="2"/>
+      </Labels>
+
+      <Text name="text_impression"
+            value="$impression_text"
+            selectionEnabled="true"
+            granularity="sentence"/>
+    </View>
+  </View>
+
+  <TextArea name="note" toName="text_impression" placeholder="Optional: reasoning or comments..." rows="3" required="false"/>
+</View>

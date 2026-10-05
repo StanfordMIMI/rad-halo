@@ -1,0 +1,23 @@
+<!-- Pre-highlight review project (App. B.3): a physician added or removed "To Review" highlights.
+  Reconstructed from the structure of the Label Studio exports (control names, target names and label
+  values); layout, instructions and styling of the original project are not recovered. Colours follow the
+  annotation interface figure: grey = awaiting review, red = error, green = no error.
+  Tasks: tasks.json of scripts/01_prepare_tasks.py; the export goes to scripts/02_import_prehighlight_review.py. -->
+<View>
+  <View style="display: flex; gap: 20px;">
+    <View style="flex: 1;">
+      <Header value="REPORT" size="6"/>
+      <Labels name="label_findings" toName="text_findings">
+        <Label value="To Review" background="#838383"/>
+      </Labels>
+      <Text name="text_findings" value="$findings_text"/>
+    </View>
+    <View style="flex: 1;">
+      <Header value="IMPRESSION" size="6"/>
+      <Labels name="label_impression" toName="text_impression">
+        <Label value="To Review" background="#838383"/>
+      </Labels>
+      <Text name="text_impression" value="$impression_text"/>
+    </View>
+  </View>
+</View>

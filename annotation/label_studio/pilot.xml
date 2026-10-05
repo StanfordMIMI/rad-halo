@@ -1,0 +1,27 @@
+<!-- Pilot annotation project (Sec. 3.4, App. A.5).
+  Reconstructed from the structure of the Label Studio exports (control names, target names and label
+  values); layout, instructions and styling of the original project are not recovered. Colours follow the
+  annotation interface figure: grey = awaiting review, red = error, green = no error.
+  Findings sentences were labelled "True" (omitted) or "False". -->
+<View>
+  <View style="display: flex; gap: 20px;">
+    <View style="flex: 1;">
+      <Header value="REPORT" size="6"/>
+      <Labels name="label_findings" toName="text_findings">
+        <Label value="To Review" background="#838383"/>
+        <Label value="True" background="#ff0000"/>
+        <Label value="False" background="#008000"/>
+      </Labels>
+      <Text name="text_findings" value="$findings_text"/>
+    </View>
+    <View style="flex: 1;">
+      <Header value="IMPRESSION" size="6"/>
+      <Labels name="label_impression" toName="text_impression">
+        <Label value="To Review" background="#838383"/>
+        <Label value="Hallucination" background="#ff0000"/>
+        <Label value="Supported / correct" background="#008000"/>
+      </Labels>
+      <Text name="text_impression" value="$impression_text"/>
+    </View>
+  </View>
+</View>

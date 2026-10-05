@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 DATA_SUFFIXES = {".json", ".jsonl", ".csv", ".tsv", ".xlsx", ".ipynb", ".parquet", ".pkl", ".npy"}
-DATA_DIRS = ("predictions/", "derived/", "results/", "tests/fixtures/")
+DATA_DIRS = ("predictions/", "derived/", "results/", "tests/fixtures/", "annotation/label_studio/")
 MAX_BYTES = 1_000_000
 LARGE_FILE_ALLOWED = ("results/", "predictions/")
 

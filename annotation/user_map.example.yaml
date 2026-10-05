@@ -1,0 +1,9 @@
+# Label Studio user ids (the `completed_by` field of exported annotations) of the people involved.
+# Copy this file outside the repository (e.g. next to the private exports) and fill in the ids of your
+# Label Studio instance; the filled-in map is never committed.
+# The ids below are placeholders.
+anchor: 100       # coordinator who fixed one sentence segmentation per report (scripts/04_build_dataset.py)
+annotator_1: 101
+annotator_2: 102
+annotator_3: 103
+annotator_4: 104
