@@ -4,7 +4,7 @@ import sys
 import pytest
 
 from radhalo.llm import build_model
-from radhalo.llm.claude import EFFORT_BETA, EXTRACTION_SYSTEM, claude_request, extraction_request
+from radhalo.llm.claude import claude_request
 from radhalo.llm.local import hf_generation_kwargs, strip_think, thinking_enabled, vllm_sampling_kwargs
 from radhalo.llm.vertex import to_vertex_schema, vertex_config, vertex_request
 
@@ -66,37 +66,20 @@ def test_vertex_request_splits_system_and_user():
     }
 
 
-def test_claude_request_never_sends_top_p_and_forces_tool():
-    cfg = {"path": "m", "max_new_tokens": 8, "temperature": 0.0, "top_p": 0.95}
-    request = claude_request(cfg, CONVERSATION, SCHEMA)
-    assert "top_p" not in request and request["temperature"] == 0.0
+def test_claude_request_is_plain_text_without_top_p():
+    cfg = {"path": "m", "max_new_tokens": 8, "temperature": 0.7, "top_p": 0.95}
+    request = claude_request(cfg, CONVERSATION)
+    assert "top_p" not in request and request["temperature"] == 0.7
     assert request["system"] == "You are a fictional assistant."
     assert request["messages"] == [CONVERSATION[1]]
-    assert request["tools"][0]["input_schema"] is SCHEMA
-    assert request["tool_choice"] == {"type": "tool", "name": "structured_output"}
-    assert "betas" not in request
+    assert not {"tools", "tool_choice", "thinking", "betas", "output_config"} & set(request)
 
 
-def test_claude_thinking_request_drops_temperature_and_tools():
-    cfg = {
-        "path": "m",
-        "max_new_tokens": 8,
-        "temperature": 0.3,
-        "thinking": {"budget_tokens": 4},
-        "effort": "high",
-    }
-    request = claude_request(cfg, CONVERSATION, SCHEMA)
-    assert request["thinking"] == {"type": "enabled", "budget_tokens": 4}
-    assert "temperature" not in request and "tools" not in request
-    assert request["betas"] == [EFFORT_BETA] and request["output_config"] == {"effort": "high"}
+def test_claude_api_rejects_json_schema():
+    from radhalo.llm.claude import build_claude
 
-
-def test_claude_extraction_request():
-    request = extraction_request({"path": "m", "max_new_tokens": 8}, "fictional analysis", SCHEMA)
-    assert request["system"] == EXTRACTION_SYSTEM
-    assert request["messages"] == [{"role": "user", "content": "fictional analysis"}]
-    assert "thinking" not in request and "betas" not in request and "temperature" not in request
-    assert request["tool_choice"]["name"] == "structured_output"
+    with pytest.raises(NotImplementedError):
+        build_claude({"path": "m"}, SCHEMA)
 
 
 def test_strip_think_removes_multiline_blocks():
