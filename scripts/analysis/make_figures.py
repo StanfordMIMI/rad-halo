@@ -13,7 +13,14 @@ from radhalo.reporting.io import REPO, parse_args  # noqa: E402
 
 TITLE_SIZE, AXIS_LABEL_SIZE, TICK_SIZE, LEGEND_SIZE = 13, 11, 10, 10
 LLM_COLOR, RADCHECK_COLOR, IAA_COLOR = "#4C78A8", "#59A14F", "#666666"
-FIGURE3_GROUPS = ["Claude Opus 4.5", "Gemini 2.5 Flash", "Gemini 3 Pro", "Qwen 3 8B", "RadCheck 8B"]
+FIGURE3_GROUPS = [
+    "Claude Opus 5.5",
+    "Gemini 2.5 Flash",
+    "Gemini 3.1 Pro",
+    "GPT-6 Astra",
+    "Qwen 3 8B",
+    "RadCheck 8B",
+]
 SOURCE_COLORS = {
     "gemini-2.5-flash": "#377EB8",
     "claude-sonnet-4-5-20250929": "#FF7F00",
@@ -26,12 +33,12 @@ PDF_METADATA = {"CreationDate": None}
 
 
 def detector_performance(metrics: pd.DataFrame, agreement: pd.DataFrame) -> plt.Figure:
-    order = [d for group in FIGURE3_GROUPS for d in DETECTORS if d.figure_group == group]
+    order = [d for group in FIGURE3_GROUPS for d in DETECTORS if d.model == group]
     rows = [metrics.set_index("detector").loc[d.key] for d in order]
     y = np.arange(len(order))[::-1]
     llm = [i for i, d in enumerate(order) if not d.is_classifier]
     radcheck = [i for i, d in enumerate(order) if d.is_classifier]
-    llm_faces = [LLM_COLOR if order[i].thinking else "white" for i in llm]
+    llm_faces = [LLM_COLOR if order[i].highest_reasoning else "white" for i in llm]
 
     fig, axes = plt.subplots(1, 2, figsize=(7, 4.2), sharey=True)
     for ax, title, prefix, error_type in [
@@ -87,7 +94,7 @@ def detector_performance(metrics: pd.DataFrame, agreement: pd.DataFrame) -> plt.
         ax.tick_params(axis="x", labelsize=TICK_SIZE)
 
     axes[0].set_yticks(y)
-    axes[0].set_yticklabels([d.figure_label for d in order], fontsize=TICK_SIZE)
+    axes[0].set_yticklabels([d.label for d in order], fontsize=TICK_SIZE)
     axes[1].tick_params(axis="y", left=False, labelleft=False)
     handles = [
         plt.Line2D(
@@ -99,7 +106,7 @@ def detector_performance(metrics: pd.DataFrame, agreement: pd.DataFrame) -> plt.
             markeredgecolor=LLM_COLOR,
             markeredgewidth=1.6,
             markersize=7,
-            label="LLM, no thinking",
+            label="LLM, lowest reasoning",
         ),
         plt.Line2D(
             [0],
@@ -109,7 +116,7 @@ def detector_performance(metrics: pd.DataFrame, agreement: pd.DataFrame) -> plt.
             markerfacecolor=LLM_COLOR,
             markeredgecolor=LLM_COLOR,
             markersize=7,
-            label="LLM, thinking",
+            label="LLM, highest reasoning",
         ),
         plt.Line2D(
             [0],

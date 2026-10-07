@@ -303,7 +303,7 @@ def detector_numbers(m: Macros, csv, tables) -> None:
             lower = fmt(value(detector.key, f"{prefix}_f1_ci_lower"), 3)
             upper = fmt(value(detector.key, f"{prefix}_f1_ci_upper"), 3)
             cells.append(f"[{lower}, {upper}]")
-        lines.append(f"{detector.table_label} & " + " & ".join(cells) + " \\\\")
+        lines.append(f"{detector.label} & " + " & ".join(cells) + " \\\\")
     lines += ["\\bottomrule", "\\end{tabular}"]
     write_table(tables / "full_detector_metrics.tex", lines)
 
