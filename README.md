@@ -29,7 +29,7 @@ private annotation exports.
 ```bash
 conda create -n radhalo python=3.12 && conda activate radhalo
 pip install -e ".[dev]"            # level A
-pip install -e ".[nlp,api]"        # + segmentation, Gemini and Claude (levels B and C)
+pip install -e ".[nlp,api,openai]" # + segmentation, Gemini, Claude, GPT-6 Astra (levels B and C)
 pip install -e ".[local,train,medval]"   # + open-weights models, RadCheck training, MedVAL
 pip install -e ".[vllm]"                 # Ministral 3B generator only (Linux + CUDA)
 pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_sm-0.5.4.tar.gz
@@ -73,17 +73,31 @@ the F1-optimal threshold on the evaluated sentences, re-optimized in every boots
 ## B. Detection
 
 ```bash
-# LLM-as-judge; <judge> is a file in configs/judges/ (e.g. gemini-3-pro_low, claude-opus-4.5_16k, qwen3-8b)
+# LLM-as-judge; <judge> is a file in configs/judges/ (e.g. gemini-3.1-pro_low, claude-opus-5.5_max, qwen3-8b)
 python scripts/detection/run_llm_judge.py judge=<judge>
+python scripts/detection/run_llm_judge.py judge=<judge> max_reports=10 out_dir=outputs/pilot   # pilot run
 
 # RadCheck 8B (GPU)
 python scripts/detection/run_radcheck.py --checkpoint <radcheck-checkpoint-dir>
 ```
 
-Predictions are written as `outputs/detection/<detector>.jsonl` in the format of `predictions/`; judge runs
-also keep the raw responses (`<judge>.raw.jsonl`) and resume where they stopped. The judge prompt is
-`prompts/llm_judge.yaml`, the RadCheck input template `prompts/radcheck.txt`. Each configuration in the paper
-was run once.
+Each frontier model is evaluated at its lowest and highest available reasoning setting; the exact parameters
+(thinking level, effort, output limit) are in `configs/judges/`. Each configuration was run once.
+
+| Judges | Access |
+|---|---|
+| Gemini 2.5 Flash, Gemini 3.1 Pro | Vertex AI (`google-genai`) |
+| Claude Opus 5.5 | Vertex AI (`AnthropicVertex`), structured JSON output |
+| GPT-6 Astra | OpenAI Responses API, strict JSON schema, `store=false` |
+| Qwen 3 8B | local (Hugging Face transformers, GPU) |
+
+Vertex AI uses Application Default Credentials (`gcloud auth application-default login`) with `GCP_PROJECT_ID`
+and `GCP_LOCATION=global` in `.env`. GPT-6 Astra needs `OPENAI_API_KEY` of a zero-data-retention project. The
+project `.env` takes precedence over variables set in the shell.
+
+Predictions are written as `outputs/detection/<judge>.jsonl` in the format of `predictions/`, the raw responses
+to `<judge>.raw.jsonl` and the token usage of every request to `<judge>.usage.jsonl`. Runs resume where they
+stopped. The judge prompt is `prompts/llm_judge.yaml`, the RadCheck input template `prompts/radcheck.txt`.
 
 RadCheck 8B weights (LoRA adapter on Qwen3-Embedding-8B) are trained on MIMIC-derived data and are
 therefore distributed with credentialed access through PhysioNet, not in this repository.

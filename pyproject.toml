@@ -26,7 +26,7 @@ dependencies = [
 # Sentence segmentation (scispaCy model: see README).
 nlp = ["spacy==3.7.5", "scispacy==0.6.2", "click>=8.1"]
 # API models: Gemini via Vertex AI, Claude via Anthropic.
-api = ["google-genai==1.61.0", "google-cloud-aiplatform==1.135.0", "anthropic==0.77.0"]
+api = ["google-genai==1.61.0", "google-cloud-aiplatform==1.135.0", "anthropic[vertex]==0.77.0"]
 # Local open-weights models and RadCheck.
 local = [
     "torch==2.9.1",
