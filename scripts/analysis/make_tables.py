@@ -321,11 +321,10 @@ def detector_numbers(m: Macros, csv, tables) -> None:
         others = [
             float(lookup(subset, "judge", j, "flag_rate")) for j in FRONTIER_JUDGES if j != GEMINI_FLASH
         ]
-        if error_type == "omission" and not self_rate > max(others):
-            raise ValueError("paper states Gemini 2.5 Flash flags its own omissions most often")
-        if error_type == "hallucination" and not min(others) <= self_rate <= max(others):
+        if not min(others) <= self_rate <= max(others):
             raise ValueError(
-                "paper states Gemini 2.5 Flash's own hallucination flag rate is within the others' range"
+                f"paper states Gemini 2.5 Flash's own {error_type} flag rate lies within the other frontier "
+                "judges' range"
             )
 
 
