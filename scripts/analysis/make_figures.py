@@ -41,9 +41,9 @@ def detector_performance(metrics: pd.DataFrame, agreement: pd.DataFrame) -> plt.
     llm_faces = [LLM_COLOR if order[i].highest_reasoning else "white" for i in llm]
 
     fig, axes = plt.subplots(1, 2, figsize=(7, 4.2), sharey=True)
-    for ax, title, prefix, error_type in [
-        (axes[0], "Hallucination", "hall", "hallucination"),
-        (axes[1], "Omission", "omis", "omission"),
+    for ax, title, prefix, error_type, xlim in [
+        (axes[0], "Hallucination", "hall", "hallucination", (0.5, 1.0)),
+        (axes[1], "Omission", "omis", "omission", (0.0, 0.5)),
     ]:
         f1 = np.array([r[f"{prefix}_f1"] for r in rows])
         low = np.array([r[f"{prefix}_f1_ci_lower"] for r in rows])
@@ -85,7 +85,7 @@ def detector_performance(metrics: pd.DataFrame, agreement: pd.DataFrame) -> plt.
         )
         ax.set_title(title, fontsize=TITLE_SIZE, fontweight="bold")
         ax.set_xlabel("F1 score", fontsize=AXIS_LABEL_SIZE)
-        ax.set_xlim(0, 1.0)
+        ax.set_xlim(*xlim)
         ax.set_ylim(-0.8, len(order) - 0.2)
         ax.grid(axis="x", color="#dddddd", linewidth=0.7)
         ax.set_axisbelow(True)
