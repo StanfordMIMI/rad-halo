@@ -1,5 +1,5 @@
-# Gemini 3.1 Pro on Vertex AI (not part of the paper's evaluation), thinking level LOW.
-# Same settings as the paper's Gemini 3 Pro judges; set GCP_LOCATION=global.
+# Paper: Table tab:appendix_detector_configs, row "Gemini 3.1 Pro, lowest reasoning" (thinking level LOW).
+# Vertex AI (GCP_LOCATION=global); thinking cannot be switched off for this model.
 type: vertex_ai
 path: gemini-3.1-pro-preview
 max_new_tokens: 65536  # model maximum

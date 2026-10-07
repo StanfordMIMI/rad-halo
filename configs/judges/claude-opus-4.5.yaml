@@ -1,7 +1,0 @@
-# Paper: Table tab:appendix_detector_configs, row "Claude Opus 4.5 no think".
-# No top_p: the claude_api backend never sends it.
-type: claude_api
-path: claude-opus-4-5-20251101
-max_new_tokens: 32768
-temperature: 0.0
-effort: high

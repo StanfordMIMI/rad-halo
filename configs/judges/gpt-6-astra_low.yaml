@@ -1,5 +1,5 @@
-# GPT-6 Astra through the OpenAI Responses API, reasoning effort "low" (lowest/highest available).
-# Reasoning is always on; the JSON answer is enforced by structured output (strict schema).
+# Paper: Table tab:appendix_detector_configs, row "GPT-6 Astra, lowest reasoning" (reasoning effort low).
+# OpenAI Responses API; reasoning is always on; the JSON answer is enforced by a strict JSON schema.
 type: openai_api
 path: gpt-6-astra
 max_new_tokens: 128000  # model maximum

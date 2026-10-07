@@ -1,5 +1,5 @@
 # LLM-judge error detection on Rad-Halo (scripts/detection/run_llm_judge.py). Run from the repository root.
-judge: ???  # name of a file in configs/judges/, e.g. gemini-3-pro_low
+judge: ???  # name of a file in configs/judges/, e.g. gemini-3.1-pro_low
 data: ${oc.env:RADHALO_DATA,data/rad-halo}  # directory with rad_halo_dataset.json
 prompt: prompts/llm_judge.yaml
 max_reports: null  # judge only the first N reports (pilot runs)

@@ -1,6 +1,6 @@
 """Run an LLM judge on every Rad-Halo report (Sec. 4.1), one request per report.
 
-    python scripts/detection/run_llm_judge.py judge=gemini-3-pro_low
+    python scripts/detection/run_llm_judge.py judge=gemini-3.1-pro_low
 
 Writes `<out_dir>/<judge>.jsonl` in the format of `predictions/` and the raw responses to
 `<out_dir>/<judge>.raw.jsonl` (token usage per request in `<judge>.usage.jsonl` where the backend reports it).

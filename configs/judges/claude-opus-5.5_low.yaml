@@ -1,5 +1,5 @@
-# Claude Opus 5.5 on Vertex AI (not part of the paper's evaluation), effort "low".
-# Thinking is always on (adaptive); the JSON answer is enforced by structured output.
+# Paper: Table tab:appendix_detector_configs, row "Claude Opus 5.5, lowest reasoning" (effort low).
+# Vertex AI; thinking is always on (adaptive); the JSON answer is enforced by structured output.
 type: claude_vertex
 path: claude-opus-5-5
 region: global
