@@ -1,4 +1,4 @@
-"""The annotated Rad-Halo dataset: build from Label Studio exports, adjudicate, finalise, release.
+"""The annotated Rad-Halo dataset: build from Label Studio exports, adjudicate, finalise.
 
 A report is a dict with `mimic_notes_id, radhalo_id, medval_risk_level, generation_model, report_text,
 impression_text, findings_sentences, impression_sentences` (+ `imaging_technique, anatomy_location`
@@ -8,7 +8,7 @@ after the imaging step). Sentences hold `start, end, text` and per-annotator lab
 
 import uuid
 
-from labelstudio import ANNOTATORS, FINDINGS, IMPRESSION, TO_REVIEW, span_result
+from labelstudio import FINDINGS, IMPRESSION, TO_REVIEW, span_result
 
 from radhalo.generation.sampling import source_id
 
@@ -257,44 +257,3 @@ def finalize(reports: list[dict]) -> None:
         for sentence_key, label_key, _, _ in ERROR_TYPES.values():
             for sentence in report[sentence_key]:
                 sentence["adjudicated_label"] = adjudicated_label(sentence[label_key])
-
-
-# --- PhysioNet release ---
-
-RELEASE_RENAMES = {"report_text": "background_and_findings_text", "generation_model": "impression_source"}
-REPORT_COLUMNS = [
-    "radhalo_id",
-    "mimic_notes_id",
-    "impression_source",
-    "medval_risk_level",
-    "imaging_technique",
-    "anatomy_location",
-    "background_and_findings_text",
-    "impression_text",
-]
-LABEL_COLUMNS = [*(f"{a}_label" for a in ANNOTATORS), f"{ADJUDICATOR}_label"]
-SENTENCE_COLUMNS = ["radhalo_id", "sentence_id", "start", "end", "text", *LABEL_COLUMNS, "adjudicated_label"]
-
-
-def release_reports(reports: list[dict]) -> list[dict]:
-    """Final reports with the release field names (key order kept)."""
-    return [{RELEASE_RENAMES.get(k, k): v for k, v in report.items()} for report in reports]
-
-
-def _csv_bool(value: bool | None) -> str:
-    return "" if value is None else str(value).lower()
-
-
-def sentence_rows(reports: list[dict], error_type: str) -> list[list]:
-    """Flattened sentences; label cells are "true", "false" or empty if that rater did not label."""
-    sentence_key, label_key, _, _ = ERROR_TYPES[error_type]
-    rows = []
-    for report in reports:
-        for index, sentence in enumerate(report[sentence_key]):
-            labels = sentence[label_key]
-            rows.append(
-                [report["radhalo_id"], index, sentence["start"], sentence["end"], sentence["text"]]
-                + [_csv_bool(labels.get(rater)) for rater in (*ANNOTATORS, ADJUDICATOR)]
-                + [_csv_bool(sentence["adjudicated_label"])]
-            )
-    return rows

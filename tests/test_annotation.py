@@ -1,8 +1,6 @@
 """Annotation provenance code (`annotation/scripts/`) on small fictional inputs."""
 
-import csv
 import importlib
-import json
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -28,7 +26,6 @@ def m():
             "06_merge_imaging",
             "thematic_export",
             "thematic_extract",
-            "build_physionet_release",
             "assignments",
         ]
         yield SimpleNamespace(**{n.lstrip("0123456789_"): importlib.import_module(n) for n in names})
@@ -237,39 +234,6 @@ def test_adjudications_and_final_label(m):
         ds.adjudicated_label({"annotator_1": True, "annotator_2": False})
 
 
-def test_release_renames_and_flattening(m, tmp_path):
-    ds = m.annotated_dataset
-    report = labelled_report(
-        {"annotator_1": True, "annotator_3": False, "adjudicator": True}, {"annotator_2": False}
-    )
-    report = {"mimic_notes_id": "note-3", **report, "imaging_technique": "CT", "anatomy_location": "Chest"}
-    ds.finalize([report])
-    (released,) = ds.release_reports([report])
-    assert list(released) == [
-        "mimic_notes_id",
-        "radhalo_id",
-        "impression_source",
-        "medval_risk_level",
-        "background_and_findings_text",
-        "impression_text",
-        "findings_sentences",
-        "impression_sentences",
-        "imaging_technique",
-        "anatomy_location",
-    ]
-    assert released["impression_source"] == "gemini-2.5-flash"
-    assert ds.sentence_rows([released], "hallucination") == [
-        [3, 0, 3, 20, "No acute process.", "true", "", "false", "", "true", "true"]
-    ]
-    m.build_physionet_release.build_release([report], tmp_path)
-    rows = list(csv.reader(open(tmp_path / "data" / "findings_sentences.csv", newline="")))
-    assert rows[0] == ds.SENTENCE_COLUMNS and rows[1][5:] == ["", "false", "", "", "", "false"]
-    assert json.loads((tmp_path / "data" / "rad_halo_dataset.json").read_text()) == [released]
-    assert (tmp_path / "data" / "reports.csv").read_bytes().startswith(b"radhalo_id,mimic_notes_id,")
-    assert json.loads((tmp_path / "metadata" / "schema.json").read_text())["type"] == "array"
-    assert (tmp_path / "code" / "example_usage.py").exists()
-
-
 def test_merge_imaging_marks_missing_unknown(m):
     reports = [{"radhalo_id": 0}, {"radhalo_id": 1}]
     missing = m.merge_imaging.merge(
@@ -314,3 +278,6 @@ def test_assignment_partitions(m):
     assert a.partition(200, "annotator_2", ["annotator_2", "annotator_4"]) == "3"
     assert a.partition(60, "annotator_4", ["annotator_1", "annotator_3", "annotator_4"]) == "extra"
     assert a.partition(60, "annotator_4", ["annotator_1", "annotator_4"]) == "5"
+    labels = {"annotator_3": True, "annotator_1": False}
+    report = {"impression_sentences": [{"annotator_labels": labels}], "findings_sentences": []}
+    assert a.report_annotators(report) == ["annotator_1", "annotator_3"]

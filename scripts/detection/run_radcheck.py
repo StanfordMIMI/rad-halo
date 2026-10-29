@@ -25,7 +25,7 @@ def main() -> None:
         "--data",
         type=Path,
         default=os.environ.get("RADHALO_DATA", REPO / "data" / "rad-halo"),
-        help="directory with the PhysioNet release (rad_halo_dataset.json)",
+        help="directory with the PhysioNet release (rad_halo.json)",
     )
     parser.add_argument("--out", type=Path, default=REPO / "outputs" / "detection" / "radcheck-8b.jsonl")
     parser.add_argument("--batch-size", type=int, default=8)

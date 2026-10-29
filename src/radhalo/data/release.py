@@ -3,12 +3,12 @@
 import json
 from pathlib import Path
 
-ADJUDICATOR = "adjudicator"
+DATASET_FILE = "rad_halo.json"
 
-# error type -> (sentence list key, per-annotator label key)
+# error type -> sentence list key
 ERROR_TYPES = {
-    "hallucination": ("impression_sentences", "is_hallucination"),
-    "omission": ("findings_sentences", "is_omission"),
+    "hallucination": "impression_sentences",
+    "omission": "findings_sentences",
 }
 
 IMPRESSION_SOURCES = {
@@ -22,8 +22,8 @@ IMPRESSION_SOURCES = {
 
 
 def load_reports(data_dir: Path) -> list[dict]:
-    """Return the 300 reports of `rad_halo_dataset.json`, ordered by radhalo_id."""
-    path = Path(data_dir) / "rad_halo_dataset.json"
+    """Return the 300 reports of `rad_halo.json`, ordered by radhalo_id."""
+    path = Path(data_dir) / DATASET_FILE
     if not path.exists():
         raise FileNotFoundError(f"{path} not found; set RADHALO_DATA to the Rad-Halo PhysioNet release")
     reports = json.loads(path.read_text())
@@ -31,16 +31,12 @@ def load_reports(data_dir: Path) -> list[dict]:
 
 
 def sentences(report: dict, error_type: str) -> list[dict]:
-    return report[ERROR_TYPES[error_type][0]]
+    return report[ERROR_TYPES[error_type]]
 
 
-def annotations(sentence: dict, error_type: str) -> dict[str, bool]:
-    """Labels of the residents and, for disputed sentences, the adjudicator."""
-    return sentence[ERROR_TYPES[error_type][1]]
-
-
-def resident_labels(sentence: dict, error_type: str) -> dict[str, bool]:
-    return {k: v for k, v in annotations(sentence, error_type).items() if k != ADJUDICATOR}
+def resident_labels(sentence: dict) -> dict[str, bool]:
+    """Labels of the residents who labeled the report (the adjudicator's label is `adjudicator_label`)."""
+    return sentence["annotator_labels"]
 
 
 def load_predictions(path: Path, reports: list[dict]) -> dict[int, dict[str, list[float]]]:

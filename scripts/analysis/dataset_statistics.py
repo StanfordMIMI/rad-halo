@@ -1,17 +1,16 @@
 """Dataset statistics with adjudicated labels (Section 5.1, Table 1-2, Appendix B, E.2)."""
 
-import csv
 from collections import defaultdict
 
-from radhalo.data.release import ADJUDICATOR, annotations, load_reports, resident_labels, sentences
+from radhalo.data.release import load_reports, resident_labels, sentences
 from radhalo.evaluation.trend import cochran_armitage
-from radhalo.reporting.io import REPO, parse_args, write_csv, write_metric_values
+from radhalo.reporting.io import parse_args, write_csv, write_metric_values
 
 RISK_LEVELS = [1, 2, 3, 4]
 
 
 def count_errors(report: dict, error_type: str) -> int:
-    return sum(s["adjudicated_label"] for s in sentences(report, error_type))
+    return sum(s["label"] for s in sentences(report, error_type))
 
 
 def pct(numerator: int, denominator: int) -> float:
@@ -48,7 +47,7 @@ def annotator_error_rates(reports: list[dict]) -> list[dict]:
     for report in reports:
         for error_type in ("hallucination", "omission"):
             for s in sentences(report, error_type):
-                for annotator, label in resident_labels(s, error_type).items():
+                for annotator, label in resident_labels(s).items():
                     counts[annotator][f"{error_type}_sentences"] += 1
                     counts[annotator][f"{error_type}_errors"] += label
     return [
@@ -73,14 +72,14 @@ def adjudication(reports: list[dict]) -> tuple[dict, list[dict]]:
         disputed = positive = 0
         for report in reports:
             for s in sentences(report, error_type):
-                labels = annotations(s, error_type)
-                if ADJUDICATOR not in labels:
+                decision = s["adjudicator_label"]
+                if decision is None:
                     continue
                 disputed += 1
-                positive += labels[ADJUDICATOR]
-                for annotator, label in resident_labels(s, error_type).items():
+                positive += decision
+                for annotator, label in resident_labels(s).items():
                     agree[annotator][f"{prefix}_disputed"] += 1
-                    agree[annotator][f"{prefix}_agrees"] += label == labels[ADJUDICATOR]
+                    agree[annotator][f"{prefix}_agrees"] += label == decision
         summary[f"{prefix}_disputed_sentences"] = disputed
         summary[f"{prefix}_adjudicated_as_error"] = positive
         summary[f"{prefix}_adjudicated_as_not_error"] = disputed - positive
@@ -109,7 +108,7 @@ def adjudication(reports: list[dict]) -> tuple[dict, list[dict]]:
 def modality_anatomy_counts(reports: list[dict]) -> list[dict]:
     counts = defaultdict(int)
     for report in reports:
-        counts[f"{report['imaging_technique']} {report['anatomy_location']}"] += 1
+        counts[f"{report['modality']} {report['anatomy']}"] += 1
     ranked = sorted(counts.items(), key=lambda kv: kv[1], reverse=True)
     return [{"modality_anatomy": k, "num_reports": n} for k, n in ranked]
 
@@ -134,16 +133,13 @@ def risk_trend(reports: list[dict]) -> list[dict]:
 
 def prehighlight_coverage(reports: list[dict]) -> dict:
     """Share of findings sentences pre-highlighted for omission review (Appendix B.3)."""
-    with open(REPO / "derived" / "prehighlighted_findings.csv") as f:
-        highlighted = {(int(r["radhalo_id"]), int(r["sentence_id"])) for r in csv.DictReader(f)}
     total = inside = omissions = omissions_inside = 0
     for report in reports:
-        for i, s in enumerate(report["findings_sentences"]):
-            is_highlighted = (report["radhalo_id"], i) in highlighted
+        for s in report["findings_sentences"]:
             total += 1
-            inside += is_highlighted
-            omissions += s["adjudicated_label"]
-            omissions_inside += s["adjudicated_label"] and is_highlighted
+            inside += s["prehighlighted"]
+            omissions += s["label"]
+            omissions_inside += s["label"] and s["prehighlighted"]
     return {
         "findings_sentences": total,
         "highlighted_findings_sentences": inside,

@@ -18,7 +18,7 @@ def collect(report_ids, by_id: dict, predictions: dict, error_type: str):
     """Adjudicated labels and scores of all sentences of the given reports (repeats allowed)."""
     y_true, y_score = [], []
     for rid in report_ids:
-        y_true += [int(s["adjudicated_label"]) for s in sentences(by_id[int(rid)], error_type)]
+        y_true += [int(s["label"]) for s in sentences(by_id[int(rid)], error_type)]
         y_score += predictions[int(rid)][error_type]
     return np.array(y_true), np.array(y_score)
 

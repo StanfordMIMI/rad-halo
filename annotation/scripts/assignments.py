@@ -10,20 +10,16 @@ import argparse
 import csv
 from pathlib import Path
 
-from annotated_dataset import ERROR_TYPES
 from labelstudio import ANNOTATORS
 
-from radhalo.data.release import load_reports
+from radhalo.data.release import ERROR_TYPES, load_reports, resident_labels, sentences
 
 PARTITION_BOUNDS = (50, 175)  # first ids of partitions 2 and 3
 
 
 def report_annotators(report: dict) -> list[str]:
     raters = {
-        k
-        for sentence_key, label_key, _, _ in ERROR_TYPES.values()
-        for s in report[sentence_key]
-        for k in s[label_key]
+        k for error_type in ERROR_TYPES for s in sentences(report, error_type) for k in resident_labels(s)
     }
     return [a for a in ANNOTATORS if a in raters]
 

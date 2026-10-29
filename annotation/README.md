@@ -1,10 +1,9 @@
 # Annotation provenance
 
 This directory documents how the Rad-Halo labels were produced (paper Sec. 3.2, 3.4-3.6, App. A.5, B,
-E.3) and how the PhysioNet release files were built. Most steps need private inputs (MIMIC-IV report
-text, generation logs, Label Studio exports), so readers can inspect but not rerun them. The steps that
-start from the PhysioNet release (`assignments.py`, `prehighlighted_findings.py` with the task file,
-`build_physionet_release.py` from the final file) are the exception.
+E.3). Most steps need private inputs (MIMIC-IV report text, generation logs, Label Studio exports), so
+readers can inspect but not rerun them; `assignments.py`, which starts from the PhysioNet release, is the
+exception. The PhysioNet release is built from the final file of step 14.
 
 Residents are identified only as `annotator_1` .. `annotator_4`, the attending as `adjudicator`.
 Label Studio user ids are read from a user map that is never committed (`user_map.example.yaml`).
@@ -32,7 +31,6 @@ Manual steps in Label Studio are marked **[LS]**. File names are those of the or
 | 12 | **[LS]** adjudication (`label_studio/labeling_config_{hallucinations,omissions}.xml`) | disagreement tasks | adjudication exports |
 | 13 | `08_add_adjudications.py` | dataset + adjudication exports | `rad-halo_dataset_adjudicated.json` |
 | 14 | `09_finalize_dataset.py` | adjudicated dataset | `rad-halo_dataset_final.json` |
-| 15 | `build_physionet_release.py` | final dataset | release `data/`, `metadata/`, `code/`; `prompts/attribution_examples.yaml` (attribution examples 1-2, App. D.1) was added to the release by hand |
 
 Side analyses:
 
@@ -41,7 +39,6 @@ Side analyses:
 | `pilot_analysis.py` | Sec. 3.4, App. A.5 | pilot export (`label_studio/pilot.xml`) + its processed data | `descriptive_stats.csv`, `stats_by_risk_level.csv` |
 | `thematic_extract.py` | App. E.3 | `rad-halo_dataset_imaging_technique.json` | coding tasks (`label_studio/thematic_coding.xml`) |
 | `thematic_export.py` | App. E.3 | coding exports | `derived/thematic_clusters.csv` |
-| `prehighlighted_findings.py` | App. B.3 | resident tasks + release | `derived/prehighlighted_findings.csv` |
 | `assignments.py` | App. B | release | `label_studio/assignments.csv` |
 | `make_example_task.py` | Fig. annotation interface | fictional report | `label_studio/example_task.json` |
 
@@ -84,10 +81,12 @@ The adjudicator's decision is read from the first annotation of each task. The f
 (`adjudicated_label`) is the adjudicator's label for disputed sentences and the unanimous resident label
 otherwise.
 
-**Release (step 15).** `rad_halo_dataset.json` is the final file with `report_text` renamed to
-`background_and_findings_text` and `generation_model` to `impression_source`. The CSVs flatten it (labels
-"true"/"false", empty where a rater did not label). `scripts/physionet_metadata.py` holds the schema and
-data dictionary verbatim; the release README is maintained separately.
+**Release.** The release maps the final file to its field names (`mimic_notes_id` -> `note_id`,
+`generation_model` -> `impression_source`, `imaging_technique` -> `modality`, `anatomy_location` ->
+`anatomy`, `report_text` -> `background_and_findings_text`). Per sentence, the label dict `is_hallucination`
+/ `is_omission` is split into `annotator_labels` and `adjudicator_label` (null if undisputed), and
+`adjudicated_label` becomes `label`; findings sentences get `prehighlighted` from the resident tasks of step
+3 (text match after lower-casing and collapsing whitespace). Labels, sentences and offsets are unchanged.
 
 **Thematic analysis.** All reference-impression sentences labelled as hallucination by at least one
 resident (union rule, before adjudication) were coded inductively in Label Studio. The `theme` field has

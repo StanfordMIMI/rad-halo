@@ -46,9 +46,12 @@ def test_cochran_armitage_detects_trend():
     assert z_flat == pytest.approx(0.0, abs=1e-9)
 
 
-def _report(labels):
+def _report(labels, adjudicator=None):
+    adjudicator = adjudicator or [None] * len(labels)
     return {
-        "impression_sentences": [{"is_hallucination": lab} for lab in labels],
+        "impression_sentences": [
+            {"annotator_labels": lab, "adjudicator_label": adj} for lab, adj in zip(labels, adjudicator)
+        ],
         "findings_sentences": [],
     }
 
@@ -56,7 +59,7 @@ def _report(labels):
 def test_agreement_excludes_adjudicator_and_pools_pairs():
     reports = [
         _report([{"annotator_1": True, "annotator_2": True}, {"annotator_1": False, "annotator_2": False}]),
-        _report([{"annotator_1": True, "annotator_2": False, "adjudicator": True}]),
+        _report([{"annotator_1": True, "annotator_2": False}], [True]),
     ]
     ids = annotator_ids(reports)
     assert ids == ["annotator_1", "annotator_2"]

@@ -17,7 +17,7 @@ def parse_args(description: str) -> argparse.Namespace:
         "--data",
         type=Path,
         default=os.environ.get("RADHALO_DATA", REPO / "data" / "rad-halo"),
-        help="directory with the PhysioNet release (rad_halo_dataset.json)",
+        help="directory with the PhysioNet release (rad_halo.json)",
     )
     parser.add_argument("--results", type=Path, default=REPO / "results")
     return parser.parse_args()

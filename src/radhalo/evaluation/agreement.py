@@ -14,7 +14,7 @@ def annotator_ids(reports: list[dict]) -> list[str]:
     for report in reports:
         for error_type in ("hallucination", "omission"):
             for s in sentences(report, error_type):
-                ids.update(resident_labels(s, error_type))
+                ids.update(resident_labels(s))
     return sorted(ids)
 
 
@@ -22,7 +22,7 @@ def krippendorff_alpha(reports: list[dict], error_type: str) -> float:
     """Nominal alpha over all sentences; annotators who did not label a sentence are missing."""
     ids = annotator_ids(reports)
     row = {a: i for i, a in enumerate(ids)}
-    items = [resident_labels(s, error_type) for r in reports for s in sentences(r, error_type)]
+    items = [resident_labels(s) for r in reports for s in sentences(r, error_type)]
     matrix = np.full((len(ids), len(items)), np.nan)
     for j, labels in enumerate(items):
         for annotator, label in labels.items():
@@ -38,7 +38,7 @@ def pooled_pairwise_labels(
     for a, b in combinations(ids, 2):
         for report in reports:
             for s in sentences(report, error_type):
-                labels = resident_labels(s, error_type)
+                labels = resident_labels(s)
                 if a in labels and b in labels:
                     first.append(int(labels[a]))
                     second.append(int(labels[b]))

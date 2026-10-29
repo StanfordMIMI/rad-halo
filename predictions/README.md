@@ -6,7 +6,7 @@ One JSONL file per detector configuration evaluated in the paper, one line per r
 {"radhalo_id": 0, "findings_scores": [0.0, 1.0], "impression_scores": [0.0]}
 ```
 
-- `findings_scores[i]` is the omission score of `findings_sentences[i]` in `rad_halo_dataset.json`;
+- `findings_scores[i]` is the omission score of `findings_sentences[i]` in `rad_halo.json`;
   `impression_scores[i]` is the hallucination score of `impression_sentences[i]`.
 - LLM judges output binary scores (0/1). RadCheck 8B outputs probabilities.
 - Files contain identifiers and scores only, no report text.
