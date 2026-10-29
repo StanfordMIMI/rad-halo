@@ -42,7 +42,8 @@ that produces every number, table and figure.
 | Code, detector predictions, analysis outputs | This repository | MIT |
 
 Rad-Halo and RadCheck 8B are derived from MIMIC-IV-Note and are therefore distributed under the same access
-terms. This repository contains no report text.
+terms. Both PhysioNet projects are currently under review; the links will be added here on publication. This
+repository contains no report text.
 
 ## ⚡️ Installation
 
@@ -59,8 +60,9 @@ cp .env.example .env                    # paths and API credentials
 ```
 
 The data are not included:
-- **Rad-Halo** — download from PhysioNet and point `RADHALO_DATA` to the directory containing
-  `rad_halo.json` (default `data/rad-halo/`). The same directory contains `attribution_examples.yaml`.
+- **Rad-Halo** — download from PhysioNet (link will be added on publication) and point `RADHALO_DATA` to
+  the directory containing `rad_halo.json` (default `data/rad-halo/`). The same directory contains
+  `attribution_examples.yaml`.
 - **MIMIC-IV-Note v2.2** (level C) — [physionet.org/content/mimic-iv-note/2.2](https://physionet.org/content/mimic-iv-note/2.2/);
   set `MIMIC_NOTE_DIR` to the directory containing `note/radiology.csv`.
 
